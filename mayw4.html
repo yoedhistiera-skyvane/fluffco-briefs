@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FluffCo Down Alternative -- Creative Brief MAY W4</title>
+<style>
+@font-face {
+  font-family: 'Recoleta';
+  src: url('https://fluff.co/cdn/shop/t/129/assets/Recoleta-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PPPangram';
+  src: url('https://fluff.co/cdn/shop/t/129/assets/PPPangramSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+:root {
+  --cream: #FAF3EF;
+  --blush: #F5EBE6;
+  --linen: #E4D5CB;
+  --navy: #424680;
+  --navy-dark: #2D2F5A;
+  --coral: #E63946;
+  --dark: #1A1A1A;
+  --mid: #555555;
+  --light: #999999;
+  --green: #1A7A4A;
+  --amber: #F59E0B;
+  --white: #FFFFFF;
+  --border: #E4D5CB;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'PPPangram', 'Helvetica Neue', sans-serif; background: var(--cream); color: var(--dark); font-size: 14px; line-height: 1.7; }
+.page { max-width: 900px; margin: 0 auto; padding: 56px 40px; }
+
+/* HEADER */
+.header { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 28px; margin-bottom: 40px; border-bottom: 2px solid var(--navy); }
+.logo { font-family: 'Recoleta', Georgia, serif; font-size: 36px; color: var(--navy); letter-spacing: -1px; }
+.logo span { color: var(--coral); }
+.header-right { text-align: right; }
+.header-tag { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--light); margin-bottom: 6px; }
+.pills { display: flex; gap: 6px; justify-content: flex-end; flex-wrap: wrap; }
+.pill { font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.5px; }
+.pill-navy { background: var(--navy); color: white; }
+.pill-coral { background: var(--coral); color: white; }
+.pill-outline { border: 1px solid var(--navy); color: var(--navy); }
+
+/* SUMMARY */
+.summary { display: grid; gap: 12px; margin-bottom: 48px; }
+.sum-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px 16px; text-align: center; }
+.sum-num { font-family: 'Recoleta', Georgia, serif; font-size: 32px; color: var(--navy); line-height: 1; }
+.sum-label { font-size: 11px; color: var(--light); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+
+/* SECTION */
+.section { margin-bottom: 48px; }
+.section-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.section-eyebrow::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.section-title { font-family: 'Recoleta', Georgia, serif; font-size: 24px; color: var(--navy); margin-bottom: 16px; }
+.section-divider { margin: 60px 0 36px; padding: 18px 24px; background: var(--navy); color: white; border-radius: 12px; }
+.section-divider-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #FFD580; margin-bottom: 4px; }
+.section-divider-title { font-family: 'Recoleta', Georgia, serif; font-size: 22px; }
+.section-divider-sub { font-size: 12px; opacity: 0.75; margin-top: 6px; }
+
+/* CARDS */
+.card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 14px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+.card-title { font-family: 'Recoleta', Georgia, serif; font-size: 18px; color: var(--navy); }
+.badge { font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
+.badge-coral { background: #FEF0F1; color: var(--coral); }
+.badge-navy { background: #EEEEF8; color: var(--navy); }
+.badge-green { background: #E8F5EE; color: var(--green); }
+.badge-amber { background: #FEF9EC; color: #8A6000; }
+
+/* INFO BOX */
+.info-box { background: var(--blush); border-radius: 10px; padding: 14px 16px; font-size: 13px; color: var(--mid); margin-top: 12px; }
+.info-box strong { color: var(--navy); }
+
+/* 2 COL GRID */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+/* GUARDRAIL */
+.guardrail { border-radius: 10px; padding: 16px; border-left: 3px solid var(--navy); background: var(--blush); }
+.guardrail.red { border-left-color: var(--coral); }
+.guardrail.green { border-left-color: var(--green); }
+.guardrail-title { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; color: var(--navy); }
+.guardrail.red .guardrail-title { color: var(--coral); }
+.guardrail.green .guardrail-title { color: var(--green); }
+ul.glist { list-style: none; padding: 0; }
+ul.glist li { font-size: 13px; color: var(--mid); padding: 5px 0 5px 18px; position: relative; border-bottom: 0.5px solid var(--border); line-height: 1.5; }
+ul.glist li:last-child { border-bottom: none; }
+ul.glist li::before { content: '→'; position: absolute; left: 0; color: var(--coral); font-size: 11px; top: 7px; }
+
+/* COLOR SWATCHES */
+.swatch-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
+.swatch { display: flex; align-items: center; gap: 10px; }
+.dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.08); flex-shrink: 0; }
+.swatch-name { font-size: 12px; font-weight: 500; color: var(--dark); display: block; }
+.swatch-hex { font-size: 11px; color: var(--light); }
+
+/* FONT DEMO */
+.font-demo { display: flex; gap: 14px; margin-top: 12px; }
+.font-card { flex: 1; background: var(--blush); border-radius: 10px; padding: 16px; text-align: center; }
+.font-sample-rec { font-family: 'Recoleta', Georgia, serif; font-size: 24px; color: var(--navy); }
+.font-sample-pan { font-family: 'PPPangram', 'Helvetica Neue', sans-serif; font-size: 16px; font-weight: 500; color: var(--navy); }
+.font-use { font-size: 11px; color: var(--light); margin-top: 4px; }
+
+
+/* META REFERENCE GALLERY */
+.meta-warn { background: #FEF0F1; border-left: 3px solid var(--coral); border-radius: 8px; padding: 12px 14px; font-size: 12px; color: var(--mid); margin-top: 12px; }
+.meta-warn strong { color: var(--coral); }
+
+
+/* LAYOUT REFERENCE -- 2-up */
+.layout-ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px; }
+.layout-ref-item { background: var(--blush); border-radius: 8px; padding: 10px; }
+.layout-ref-item img { width: 100%; height: auto; border-radius: 6px; display: block; }
+.layout-ref-meta { margin-top: 10px; }
+.layout-ref-label { font-family: 'Recoleta', Georgia, serif; font-size: 14px; color: var(--navy); }
+.layout-ref-desc { font-size: 11px; color: var(--light); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+.layout-ref-headline { font-size: 12px; color: var(--mid); margin-top: 6px; font-style: italic; }
+
+/* SAFE AREA */
+.safe-wrap { display: flex; gap: 28px; align-items: flex-start; }
+.phone { width: 110px; flex-shrink: 0; height: 196px; background: #E0D8D0; border-radius: 14px; border: 1.5px solid #AAA; position: relative; overflow: hidden; }
+.z-danger { position: absolute; left: 0; right: 0; background: rgba(230,57,70,0.22); }
+.z-safe { position: absolute; left: 0; right: 0; background: rgba(26,122,74,0.1); border-top: 1.5px dashed #1A7A4A; border-bottom: 1.5px dashed #1A7A4A; }
+.z-label { position: absolute; left: 0; right: 0; text-align: center; font-size: 7px; font-weight: 600; }
+.spec-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.spec-table td { padding: 8px 0; border-bottom: 0.5px solid var(--border); }
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-key { color: var(--mid); }
+.spec-val { font-weight: 500; color: var(--navy); font-family: monospace; font-size: 12px; text-align: right; }
+
+/* DIRECTION BLOCKS */
+.layer-l1 { background: #EEEEF8; border: 1px solid #C4C6E8; border-radius: 12px; padding: 20px; margin-bottom: 12px; }
+.layer-l2 { background: #FEF9EC; border: 1px solid #F0D890; border-radius: 12px; padding: 20px; }
+.layer-title { font-family: 'Recoleta', Georgia, serif; font-size: 17px; color: var(--navy); margin-bottom: 6px; }
+.layer-l2 .layer-title { color: #7A5500; }
+.layer-sub { font-size: 13px; color: #555; margin-bottom: 14px; line-height: 1.6; }
+.layer-l2 .layer-sub { color: #7A5500; }
+
+/* DISTRIBUTION TABLE */
+table.dist { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+table.dist th { background: var(--navy); color: white; padding: 10px 14px; text-align: left; font-size: 11px; letter-spacing: 0.5px; font-weight: 500; }
+table.dist td { padding: 10px 14px; border-bottom: 0.5px solid var(--border); vertical-align: middle; }
+table.dist tr:last-child td { border-bottom: none; font-weight: 500; background: var(--blush); }
+table.dist tr:nth-child(even) td { background: #F8F4F1; }
+
+/* DO DONT */
+.do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+.dont-card { border-radius: 10px; padding: 14px; border-left: 3px solid var(--coral); background: #FEF0F1; }
+.do-card { border-radius: 10px; padding: 14px; border-left: 3px solid var(--green); background: #E8F5EE; }
+.dd-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.dont-card .dd-label { color: var(--coral); }
+.do-card .dd-label { color: var(--green); }
+.dd-item { font-size: 12px; padding: 5px 0; border-bottom: 0.5px solid rgba(0,0,0,0.08); color: var(--dark); line-height: 1.5; }
+.dd-item:last-child { border-bottom: none; }
+.dd-note { font-size: 12px; color: var(--mid); margin-top: 12px; padding: 10px 12px; background: var(--blush); border-radius: 8px; border-left: 3px solid var(--navy); }
+
+/* TRACKS */
+.track-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.track-card { background: white; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.track-card.full { grid-column: 1 / -1; }
+.track-top { height: 4px; }
+.t1 .track-top { background: var(--navy); }
+.t2 .track-top { background: var(--coral); }
+.t3 .track-top { background: var(--amber); }
+.t4 .track-top { background: var(--green); }
+.track-body { padding: 18px 20px; }
+.track-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--light); margin-bottom: 4px; }
+.track-name { font-family: 'Recoleta', Georgia, serif; font-size: 18px; color: var(--navy); margin-bottom: 4px; }
+.track-meta { font-size: 11px; color: var(--light); margin-bottom: 12px; }
+.track-goal { font-size: 13px; color: var(--mid); margin-bottom: 14px; line-height: 1.6; padding-bottom: 12px; border-bottom: 0.5px solid var(--border); }
+.copy-block { background: var(--blush); border-radius: 8px; padding: 12px; margin-bottom: 10px; }
+.copy-block-title { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: var(--light); margin-bottom: 8px; }
+.copy-item { font-size: 12px; color: var(--dark); padding: 5px 0; border-bottom: 0.5px solid var(--border); line-height: 1.5; }
+.copy-item:last-child { border-bottom: none; }
+.visual-note { font-size: 12px; color: var(--mid); font-style: italic; line-height: 1.5; }
+
+/* AUDIENCE CUT SUB-CARD (Track 1) */
+.cut-card { background: #F8F6FB; border: 1px solid #DCD9EA; border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; }
+.cut-card:last-child { margin-bottom: 0; }
+.cut-name { font-size: 12px; font-weight: 500; color: var(--navy); margin-bottom: 2px; }
+.cut-meta { font-size: 10px; color: var(--light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.cut-headlines { font-size: 12px; }
+.cut-headline { padding: 4px 0; border-bottom: 0.5px solid #E4DFF0; line-height: 1.5; color: var(--dark); }
+.cut-headline:last-child { border-bottom: none; }
+
+/* LP CARDS (Section 2 -- compact) */
+.lp-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.lp-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+.lp-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; padding-bottom: 10px; margin-bottom: 12px; border-bottom: 0.5px solid var(--border); }
+.lp-eyebrow { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--coral); margin-bottom: 3px; }
+.lp-name { font-family: 'Recoleta', Georgia, serif; font-size: 16px; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
+.lp-url { font-family: monospace; font-size: 10px; color: var(--mid); word-break: break-all; background: var(--blush); padding: 4px 8px; border-radius: 4px; display: inline-block; }
+.lp-count { font-size: 10px; color: var(--light); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+.lp-goal { font-size: 12px; color: var(--mid); margin-bottom: 12px; line-height: 1.55; }
+.lp-headlines { background: var(--blush); border-radius: 6px; padding: 10px 12px; columns: 2; column-gap: 20px; }
+.lp-headlines .copy-item { font-size: 11px; padding: 4px 0; line-height: 1.45; break-inside: avoid; }
+.lp-visual { font-size: 11px; color: var(--mid); font-style: italic; margin-top: 10px; padding-top: 10px; border-top: 0.5px solid var(--border); }
+
+/* STANDING */
+.standing { background: var(--navy); color: white; border-radius: 14px; padding: 28px; margin-top: 48px; }
+.standing h2 { font-family: 'Recoleta', Georgia, serif; font-size: 22px; margin-bottom: 14px; }
+.standing p { font-size: 13px; line-height: 1.7; opacity: 0.85; margin-bottom: 10px; }
+.standing strong { color: #FFD580; opacity: 1; }
+.standing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 16px; }
+.standing-item { background: rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 14px; }
+.standing-item-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; margin-bottom: 4px; }
+.standing-item-val { font-size: 13px; font-weight: 500; }
+
+/* FOOTER */
+.footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.footer-brand { font-family: 'Recoleta', Georgia, serif; font-size: 16px; color: var(--navy); }
+.footer-note { font-size: 11px; color: var(--light); }
+
+@media print { body { background: white; } .page { padding: 24px; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <div class="logo">FLUFF<span>Co</span></div>
+    <div style="font-size:13px;color:var(--mid);margin-top:4px;">Down Alternative Pillow -- Creative Brief</div>
+  </div>
+  <div class="header-right">
+    <div class="header-tag">Prepared for Blitzads</div>
+    <div class="pills">
+      <span class="pill pill-navy">Story 9:16</span>
+      <span class="pill pill-coral">500 Total Assets</span>
+      <span class="pill pill-outline">MAY W4 Delivery</span>
+    </div>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary" style="grid-template-columns: repeat(4, 1fr);">
+  <div class="sum-card"><div class="sum-num">500</div><div class="sum-label">Total Assets</div></div>
+  <div class="sum-card"><div class="sum-num">250</div><div class="sum-label">Section 1 -- Tracks</div></div>
+  <div class="sum-card"><div class="sum-num">250</div><div class="sum-label">Section 2 -- Landing Pages</div></div>
+  <div class="sum-card"><div class="sum-num">10</div><div class="sum-label">Landing Page Angles</div></div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="section">
+  <div class="section-eyebrow">Overview</div>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">500 Assets -- Section 1 + Section 2</div>
+      <span class="badge badge-navy">Story 9:16 only</span>
+    </div>
+    <div class="two-col" style="font-size:13px;">
+      <div>
+        <div style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:var(--light);margin-bottom:4px;">Product</div>
+        <div style="font-weight:500;color:var(--navy);">FluffCo Down Alternative Pillow</div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:var(--light);margin-bottom:4px;">Primary Landing Page</div>
+        <div style="font-weight:500;color:var(--navy);">get.fluff.co</div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:var(--light);margin-bottom:4px;">Price Points</div>
+        <div style="color:var(--mid);">$69.90 (1 Pillow) &nbsp;/&nbsp; $109.90 (2 Pillows) &nbsp;/&nbsp; $165.90 (4 Pillows)</div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:var(--light);margin-bottom:4px;">Core Positioning Anchor</div>
+        <div style="color:var(--mid);">Hotel-quality sleep at an accessible price -- every single asset, no exception</div>
+      </div>
+    </div>
+    <div class="info-box" style="margin-top:14px;"><strong>What is different about MAY W4:</strong> This brief is split into two sections. Section 1 continues the 4-track awareness funnel from MAY W3 with new audience cuts and net-new headlines -- it must feel meaningfully different from the previous batch, not just a continuation. Section 2 introduces 10 new "reasons" landing pages, each with its own creative angle and dedicated URL.</div>
+  </div>
+</div>
+
+<!-- BRAND GUARDRAILS -->
+<div class="section">
+  <div class="section-eyebrow">Brand Guardrails</div>
+
+  <!-- Fonts -->
+  <div class="card" style="margin-bottom:14px;">
+    <div class="card-header"><div class="card-title">Typography</div></div>
+    <div class="font-demo">
+      <div class="font-card">
+        <div class="font-sample-rec">Recoleta</div>
+        <div class="font-use">Headlines and display text</div>
+      </div>
+      <div class="font-card">
+        <div class="font-sample-pan">PP Pangram Sans</div>
+        <div class="font-use">Body copy, buttons, UI text</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Colors -->
+  <div class="card" style="margin-bottom:14px;">
+    <div class="card-header"><div class="card-title">Color Palette -- reference get.fluff.co</div></div>
+    <div class="swatch-row">
+      <div class="swatch"><div class="dot" style="background:#FAF3EF;"></div><div><span class="swatch-name">Warm Cream</span><span class="swatch-hex">#FAF3EF -- Primary BG</span></div></div>
+      <div class="swatch"><div class="dot" style="background:#F5EBE6;"></div><div><span class="swatch-name">Blush</span><span class="swatch-hex">#F5EBE6 -- Secondary BG</span></div></div>
+      <div class="swatch"><div class="dot" style="background:#424680;"></div><div><span class="swatch-name">Navy</span><span class="swatch-hex">#424680 -- Headlines, Logo</span></div></div>
+      <div class="swatch"><div class="dot" style="background:#E63946;"></div><div><span class="swatch-name">Coral Red</span><span class="swatch-hex">#E63946 -- CTA Buttons</span></div></div>
+      <div class="swatch"><div class="dot" style="background:#1A1A1A;"></div><div><span class="swatch-name">Near Black</span><span class="swatch-hex">#1A1A1A -- Body Text</span></div></div>
+      <div class="swatch"><div class="dot" style="background:#F59E0B;"></div><div><span class="swatch-name">Amber</span><span class="swatch-hex">#F59E0B -- Star Ratings</span></div></div>
+      <div class="swatch"><div class="dot" style="background:#22C55E;"></div><div><span class="swatch-name">Green</span><span class="swatch-hex">#22C55E -- Trust Accents</span></div></div>
+    </div>
+  </div>
+
+  <!-- Rules -->
+  <div class="two-col">
+    <div class="guardrail red">
+      <div class="guardrail-title">AI Generation -- Strictly Enforced</div>
+      <ul class="glist">
+        <li>Product must be 1:1 with real FluffCo pillows -- use provided reference images. Shape, piping detail, and fill loft must match exactly</li>
+        <li>No AI artifacts -- no warped fabric, impossible folds, extra pillows appearing, distorted text, melting edges, unnatural halos</li>
+        <li>If pillow render does not look real and accurate -- regenerate. Do not ship.</li>
+        <li>All scenes must feel photorealistic -- not painterly, not fantasy, not over-rendered</li>
+      </ul>
+    </div>
+    <div class="guardrail">
+      <div class="guardrail-title">General Rules</div>
+      <ul class="glist">
+        <li>No em dashes in any copy</li>
+        <li>CTA buttons: clean action text only -- no price in button copy</li>
+        <li>No cluttered layouts -- one dominant message per asset</li>
+        <li>Every asset must feel like it belongs on a premium brand's Instagram</li>
+        <li>No price in Track 1 (Unaware) and Track 2 (Problem-Aware). Price appears in Track 3 selectively and Track 4 always.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- META-SAFETY -- new block -->
+  <div class="card" style="margin-top:14px;">
+    <div class="card-header">
+      <div class="card-title">Meta Ad Policy -- Safe But Strong</div>
+      <span class="badge badge-coral">Mandatory</span>
+    </div>
+    <p style="font-size:13px;color:var(--mid);margin-bottom:12px;">Every headline must be writeable on Meta without getting rejected. Safe does not mean bland -- the reference headlines below show the voice we want to match. Strong, abstract, observational. Never claim-led, never personal-attribute, never named brand.</p>
+    <div class="two-col">
+      <div class="guardrail red">
+        <div class="guardrail-title">Do NOT use</div>
+        <ul class="glist">
+          <li>Named hotel brands (Four Seasons, Ritz-Carlton, Westin, Marriott, Hyatt, etc) -- third-party trademarks plus implied endorsement</li>
+          <li>Named competitor pillow or bedding brands of any kind</li>
+          <li>Personal attributes -- "your neck pain," "your snoring," "you are exhausted," "your back hurts" -- direct call-out flags Meta review</li>
+          <li>Medical claims -- "cures," "ends," "fixes," "stops" any condition</li>
+          <li>Diagnostic language -- "if you have X, you need Y" framings</li>
+          <li>Before/after / negative health framing -- "are you tired all the time?" "do you wake up sore?"</li>
+          <li>Unsubstantiated superlatives -- "the best pillow in the world," "guaranteed best sleep"</li>
+          <li>Specialist endorsement claims -- "chiropractors recommend," "doctors recommend" -- unless we can substantiate with documentation</li>
+        </ul>
+      </div>
+      <div class="guardrail green">
+        <div class="guardrail-title">DO use</div>
+        <ul class="glist">
+          <li>Generic category references -- "luxury hotels," "5-star hotels," "the world's best hotels," "hotel-grade fill"</li>
+          <li>Observational language -- "mornings can feel different," "sleep specialists talk about the pillow first"</li>
+          <li>Abstract/aspirational framing -- the 12 reference headlines below set the voice</li>
+          <li>Product specifications -- "down alternative," "hotel-grade fill," "hypoallergenic," "RDS certified"</li>
+          <li>Factual social proof -- "794,000 sleepers," "5-star reviews," "100-night trial"</li>
+          <li>Price claims -- $69.90 is a documented price, safe to use</li>
+          <li>Universal experience -- "the way mornings feel," "the way couples sleep" -- not directed AT the viewer</li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta-warn"><strong>Rule of thumb:</strong> if a headline calls OUT the viewer ("you are X," "your X is broken"), it is unsafe. If it describes a universal observation ("mornings feel different," "the pillow is the variable"), it is safe.</div>
+  </div>
+
+  <!-- REFERENCE LAYOUTS -- 2 example assets, layout reference only -->
+  <div class="card" style="margin-top:14px;">
+    <div class="card-header">
+      <div class="card-title">Headline Layouts -- 2 Reference Examples</div>
+      <span class="badge badge-navy">Layout reference</span>
+    </div>
+    <p style="font-size:13px;color:var(--mid);margin-bottom:12px;">Two layout treatments to consider when placing headlines. Both use the same headline so the only variable shown is the layout. These are NOT winning assets and NOT a quality benchmark -- they are style references for headline placement and treatment. The 500-asset brief should explore other layout variations beyond these two.</p>
+    <div class="layout-ref-grid">
+      <div class="layout-ref-item">
+        <img src="data:image/jpeg;base64,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" alt="Luxury Without Trying Too Hard" />
+        <div class="layout-ref-meta">
+          <div class="layout-ref-label">Layout A</div>
+          <div class="layout-ref-desc">Floating headline -- no card</div>
+          <div class="layout-ref-headline">"Luxury Without Trying Too Hard"</div>
+        </div>
+      </div>
+      <div class="layout-ref-item">
+        <img src="data:image/jpeg;base64,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" alt="Luxury Without Trying Too Hard" />
+        <div class="layout-ref-meta">
+          <div class="layout-ref-label">Layout B</div>
+          <div class="layout-ref-desc">Headline inside a white card</div>
+          <div class="layout-ref-headline">"Luxury Without Trying Too Hard"</div>
+        </div>
+      </div>
+    </div>
+    <div class="meta-warn"><strong>Voice note:</strong> Both reference assets use the same softer/abstract voice ("Luxury Without Trying Too Hard"). That voice is one option among many for this brief, not the dominant voice. The 500 assets use a mix of voices across the 4 tracks and 10 LPs -- see the headline lists per section. These 2 layout references should not be read as a copy-style mandate.</div>
+  </div>
+</div>
+
+<!-- SAFE AREA -->
+<div class="section">
+  <div class="section-eyebrow">Safe Area -- Mandatory</div>
+  <div class="card">
+    <div class="card-header"><div class="card-title">Story 9:16 Safe Zone</div><span class="badge badge-coral">1080 x 1920px canvas</span></div>
+    <div class="safe-wrap">
+      <div>
+        <div class="phone">
+          <div class="z-danger" style="top:0;height:25px;"><div class="z-label" style="top:7px;color:#E63946;">DANGER</div></div>
+          <div class="z-safe" style="top:25px;height:146px;"><div class="z-label" style="top:65px;color:#1A7A4A;">SAFE ZONE</div></div>
+          <div class="z-danger" style="bottom:0;height:25px;"><div class="z-label" style="top:7px;color:#E63946;">DANGER</div></div>
+        </div>
+        <div style="font-size:10px;color:var(--light);text-align:center;margin-top:6px;">Not to scale</div>
+      </div>
+      <div style="flex:1;">
+        <table class="spec-table">
+          <tr><td class="spec-key">Top safe boundary</td><td class="spec-val">y = 250px</td></tr>
+          <tr><td class="spec-key">Bottom safe boundary</td><td class="spec-val">y = 1600px</td></tr>
+          <tr><td class="spec-key">Feed-safe zone</td><td class="spec-val">y = 460px to y = 1460px</td></tr>
+          <tr><td class="spec-key">Left and right margins</td><td class="spec-val">64px minimum each side</td></tr>
+          <tr><td class="spec-key">Top 250px</td><td class="spec-val">Leave empty -- IG UI overlaps</td></tr>
+          <tr><td class="spec-key">Bottom 320px</td><td class="spec-val">Leave empty -- caption and reply bar</td></tr>
+        </table>
+        <div class="info-box" style="margin-top:12px;">Product image can bleed outside safe zone as a background element -- but the pillow itself must be fully visible within the safe zone at all times.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================= -->
+<!-- SECTION 1 DIVIDER         -->
+<!-- ========================= -->
+<div class="section-divider">
+  <div class="section-divider-eyebrow">Section 1 -- 250 Assets</div>
+  <div class="section-divider-title">Awareness Funnel -- Continuation with New Audience Cuts</div>
+  <div class="section-divider-sub">Same 4-track structure as MAY W3. Net-new headlines and net-new audience cuts. Must feel distinct -- not a continuation by volume, but by creative entry-point.</div>
+</div>
+
+<!-- SECTION 1 ASSET STRUCTURE -->
+<div class="section">
+  <div class="section-eyebrow">Asset Structure -- Section 1</div>
+
+  <!-- Creative Direction -->
+  <div class="layer-l1" style="margin-bottom:12px;">
+    <div class="layer-title">Distinctness vs MAY W3</div>
+    <div class="layer-sub">MAY W3 covered the 4 awareness tracks with general audiences. MAY W4 Section 1 layers in specific audience cuts per track. The viewer should not feel like they have seen this ad before -- visually or in copy. Bedroom scenes, scene types, and copy formats should rotate aggressively.</div>
+  </div>
+
+  <!-- Distribution -->
+  <div style="margin-top:8px;">
+    <div style="font-size:13px;font-weight:500;color:var(--navy);margin-bottom:8px;">Section 1 -- Track distribution</div>
+    <table class="dist">
+      <thead><tr><th>Track</th><th>Audience cut(s)</th><th>Assets</th><th>Price shown?</th></tr></thead>
+      <tbody>
+        <tr><td>Track 1 -- Unaware</td><td>7 cuts (multi-audience)</td><td><span class="badge badge-navy">85 assets</span></td><td>No</td></tr>
+        <tr><td>Track 2 -- Problem-Aware</td><td>Travelers / road warriors</td><td><span class="badge badge-navy">70 assets</span></td><td>No / implied</td></tr>
+        <tr><td>Track 3 -- Solution-Aware</td><td>Wellness / sleep-optimizers</td><td><span class="badge badge-navy">60 assets</span></td><td>Selective</td></tr>
+        <tr><td>Track 4 -- Product-Aware</td><td>Retargeting / cart abandoners</td><td><span class="badge badge-navy">35 assets</span></td><td>Yes</td></tr>
+        <tr><td>Total</td><td></td><td>250 assets</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECTION 1 -- TRACK BREAKDOWN -->
+<div class="section">
+  <div class="section-eyebrow">Track Breakdown -- Section 1</div>
+
+  <!-- TRACK 1 UNAWARE -- FULL WIDTH with 7 cuts -->
+  <div class="track-card t1 full" style="margin-bottom:14px;">
+    <div class="track-top"></div>
+    <div class="track-body">
+      <div class="track-eyebrow">Track 01 -- Cold scroll-stoppers</div>
+      <div class="track-name">Unaware -- 7 Audience Cuts</div>
+      <div class="track-meta">85 assets -- No price -- Multi-audience expansion</div>
+      <div class="track-goal">Track 1 in MAY W4 widens the door. Each of the 7 audience cuts below gets its own ~12-asset block. The pillow is incidental in the frame. Each cut should feel like an ad written by someone inside that life stage, not at it. Total across 7 cuts: 85 assets.</div>
+
+      <div class="cut-card">
+        <div class="cut-name">Cut 1a -- Parents / new parents</div>
+        <div class="cut-meta">~12 assets -- sleep-deprived life-stage framing</div>
+        <div class="cut-headlines">
+          <div class="cut-headline">"I sleep 5 hours and I will not have it be on a bad pillow"</div>
+          <div class="cut-headline">"Parent-life upgrade nobody talks about: better pillow"</div>
+          <div class="cut-headline">"Cannot control the kids. Can control the pillow."</div>
+          <div class="cut-headline">"The 30 minutes I sleep, I want to be premium"</div>
+          <div class="cut-headline">"When you only get a little sleep, it needs to be great sleep"</div>
+        </div>
+      </div>
+
+      <div class="cut-card">
+        <div class="cut-name">Cut 1b -- Travelers / road warriors</div>
+        <div class="cut-meta">~12 assets -- hotel-bed-envy framing</div>
+        <div class="cut-headlines">
+          <div class="cut-headline">"Sleeping in 40 hotels a year ruined me for my own bed"</div>
+          <div class="cut-headline">"Frequent flyer with a finally-fixed bed"</div>
+          <div class="cut-headline">"The one thing that made coming home better than the hotel"</div>
+          <div class="cut-headline">"Enough hotel rooms and you start to know good pillows"</div>
+          <div class="cut-headline">"Travel taught me what a pillow should actually feel like"</div>
+        </div>
+      </div>
+
+      <div class="cut-card">
+        <div class="cut-name">Cut 1c -- Aging-into-it / 30s+</div>
+        <div class="cut-meta">~12 assets -- identity / adulting reframes</div>
+        <div class="cut-headlines">
+          <div class="cut-headline">"30s upgrades that hit harder than you'd expect"</div>
+          <div class="cut-headline">"Becoming the kind of person who has Opinions about pillows"</div>
+          <div class="cut-headline">"Your 40s self is going to thank you for this one"</div>
+          <div class="cut-headline">"The age where you finally treat your sleep seriously"</div>
+          <div class="cut-headline">"Things I never thought I'd care about: pillow loft"</div>
+        </div>
+      </div>
+
+      <div class="cut-card">
+        <div class="cut-name">Cut 1d -- Wellness-stack / sleep-optimizers</div>
+        <div class="cut-meta">~12 assets -- supplement / tracker / biohack crowd</div>
+        <div class="cut-headlines">
+          <div class="cut-headline">"You bought the magnesium. The mouth tape. Now fix the pillow."</div>
+          <div class="cut-headline">"The cheapest sleep upgrade nobody in the wellness world talks about"</div>
+          <div class="cut-headline">"Your Oura ring will notice"</div>
+          <div class="cut-headline">"Sleep optimization, but you actually feel it"</div>
+          <div class="cut-headline">"Before you buy another supplement, check what is under your head"</div>
+        </div>
+      </div>
+
+      <div class="cut-card">
+        <div class="cut-name">Cut 1e -- Empty nesters / 50s+</div>
+        <div class="cut-meta">~12 assets -- bedroom-is-finally-ours framing</div>
+        <div class="cut-headlines">
+          <div class="cut-headline">"Kids moved out. Bedroom is finally ours again."</div>
+          <div class="cut-headline">"First real upgrade to the bedroom in 20 years"</div>
+          <div class="cut-headline">"The bed should feel like a reward at this point"</div>
+          <div class="cut-headline">"Finally have time to actually enjoy sleep"</div>
+          <div class="cut-headline">"Treating yourself to the things you put off"</div>
+        </div>
+      </div>
+
+      <div class="cut-card">
+        <div class="cut-name">Cut 1f -- Renters / first apartment</div>
+        <div class="cut-meta">~12 assets -- first grown-up purchase framing</div>
+        <div class="cut-headlines">
+          <div class="cut-headline">"First grown-up purchase that is not from IKEA"</div>
+          <div class="cut-headline">"The thing that makes your first place feel like a real place"</div>
+          <div class="cut-headline">"Living on a budget but not on bad sleep"</div>
+          <div class="cut-headline">"When you cannot afford the mattress, get the pillow right"</div>
+          <div class="cut-headline">"Small apartment, big bed energy"</div>
+        </div>
+      </div>
+
+      <div class="cut-card">
+        <div class="cut-name">Cut 1g -- WFH / remote workers</div>
+        <div class="cut-meta">~13 assets -- bedroom-is-real-estate framing</div>
+        <div class="cut-headlines">
+          <div class="cut-headline">"Working from home means the bed matters more, not less"</div>
+          <div class="cut-headline">"When your bedroom is also your everything else, comfort is non-negotiable"</div>
+          <div class="cut-headline">"Nap culture deserves a good pillow"</div>
+          <div class="cut-headline">"3 feet from the bed all day. Make it count at night."</div>
+          <div class="cut-headline">"WFH life: the bed is real estate"</div>
+        </div>
+      </div>
+
+      <div class="visual-note" style="margin-top:14px;">Across the 7 cuts: vary bedroom style, lighting, time of day, and on-screen person (or no person) so the 85 Track 1 assets do not blur together. Each cut should feel visually anchored to its life stage -- parent cut has parent-bedroom signals; renter cut shows smaller spaces; empty-nester cut shows mature, settled rooms.</div>
+    </div>
+  </div>
+
+  <!-- TRACKS 2, 3 in two columns -->
+  <div class="track-grid">
+
+    <!-- TRACK 2 PROBLEM-AWARE -->
+    <div class="track-card t2">
+      <div class="track-top"></div>
+      <div class="track-body">
+        <div class="track-eyebrow">Track 02 -- Pain hooks</div>
+        <div class="track-name">Problem-Aware -- Travelers</div>
+        <div class="track-meta">70 assets -- No price / implied</div>
+        <div class="track-goal">Travelers / business travelers / frequent flyers. The angle is literal hotel-bed envy. "You sleep better in hotels because the pillow is doing the work, not the bed." Surface pain through travel context: post-trip body ache, jet-lag amplified by bad home pillow, road-warrior exhaustion. No hotel imagery as the solution yet -- save that for Track 3.</div>
+        <div class="copy-block">
+          <div class="copy-block-title">20 headlines -- travel-life pain</div>
+          <div class="copy-item">"Why your home bed loses to every hotel bed in America"</div>
+          <div class="copy-item">"You sleep better in hotels because the pillow is doing the work"</div>
+          <div class="copy-item">"The reason hotel sleep feels different from home sleep"</div>
+          <div class="copy-item">"Road warriors know: the pillow is the difference"</div>
+          <div class="copy-item">"Your back hurts after every trip. The flights are not the only reason."</div>
+          <div class="copy-item">"If you have ever stolen a hotel pillow concept, this is for you"</div>
+          <div class="copy-item">"Eight hours on a plane. Eight hours on a bad pillow. Pick your damage."</div>
+          <div class="copy-item">"Frequent flyers have a thing about pillows. There is a reason."</div>
+          <div class="copy-item">"You travel for work and sleep at home tired. The setup is backwards."</div>
+          <div class="copy-item">"Hotel rooms taught me my bed at home is the problem"</div>
+          <div class="copy-item">"After every business trip your neck reminds you what is missing"</div>
+          <div class="copy-item">"Why a great hotel pillow ruins the one at home"</div>
+          <div class="copy-item">"Returned from a trip. Slept worse at home. You know why."</div>
+          <div class="copy-item">"Jet lag is one thing. A bad pillow is what makes it linger."</div>
+          <div class="copy-item">"Living out of suitcases taught me one thing about beds"</div>
+          <div class="copy-item">"If your hotel sleep is better than your home sleep, fix the pillow first"</div>
+          <div class="copy-item">"The pillow at the airport hotel was better than the one in your bedroom"</div>
+          <div class="copy-item">"Coming home should feel better than checking in. Right now it does not."</div>
+          <div class="copy-item">"Sleeping in different beds for a living means you know a good pillow"</div>
+          <div class="copy-item">"Hotel pillows are not magic. Your pillow is just behind."</div>
+        </div>
+        <div class="visual-note">Travel-coded visuals: open suitcase next to bed, plane seat with neck pillow contrasted with home pillow, the home bed lit dimly while a memory-of-hotel overlay shows. The pillow is the villain. Avoid showing FluffCo as the solution in this track -- that comes in Track 3.</div>
+      </div>
+    </div>
+
+    <!-- TRACK 3 SOLUTION-AWARE -->
+    <div class="track-card t3">
+      <div class="track-top"></div>
+      <div class="track-body">
+        <div class="track-eyebrow">Track 03 -- Category education</div>
+        <div class="track-name">Solution-Aware -- Wellness Stack</div>
+        <div class="track-meta">60 assets -- Selective price</div>
+        <div class="track-goal">Wellness-curious / sleep-optimizers. People who already buy magnesium, mouth tape, sleep trackers, blackout curtains. Position hotel-grade down alternative as the missing piece in their sleep stack. Pillow as biohack. Generic category comparisons still apply (vs flat fiber, vs real down). No named competitors.</div>
+        <div class="copy-block">
+          <div class="copy-block-title">20 headlines -- sleep-stack positioning</div>
+          <div class="copy-item">"The sleep stack everyone forgets: pillow first, supplements second"</div>
+          <div class="copy-item">"Magnesium will not fix what the pillow is breaking"</div>
+          <div class="copy-item">"Sleep trackers can see what a bad pillow does to you"</div>
+          <div class="copy-item">"Cold room, blackout curtains, dialed routine, wrong pillow"</div>
+          <div class="copy-item">"The cheapest variable in your sleep stack. The biggest leverage."</div>
+          <div class="copy-item">"If you have an Oura, you already know the data"</div>
+          <div class="copy-item">"Wellness stack basics: hydration, magnesium, mouth tape, and a pillow that actually works"</div>
+          <div class="copy-item">"Hotel-grade down alternative is the sleep biohack nobody is talking about"</div>
+          <div class="copy-item">"Hypoallergenic. Hotel-grade. Built for actual sleep quality."</div>
+          <div class="copy-item">"The pillow you'd recommend to someone who reads Andrew Huberman"</div>
+          <div class="copy-item">"Your morning HRV will know"</div>
+          <div class="copy-item">"Down alternative does what real down cannot: stay clean, stay consistent"</div>
+          <div class="copy-item">"Engineered for sleep architecture, not just softness"</div>
+          <div class="copy-item">"If you have a recovery routine, your pillow needs to keep up"</div>
+          <div class="copy-item">"REM sleep happens on something. Make sure it is good."</div>
+          <div class="copy-item">"Same fill the world's best hotels use. Built for nightly use, not nightly checkout."</div>
+          <div class="copy-item">"Allergen-free, dust-mite resistant, hotel-tested by 794,000 sleepers"</div>
+          <div class="copy-item">"The sleep optimizers all eventually arrive at the pillow"</div>
+          <div class="copy-item">"Wellness people figured out the mattress decade ago. Now the pillow."</div>
+          <div class="copy-item">"If you take sleep seriously, you take what is under your head seriously"</div>
+        </div>
+        <div class="visual-note">Wellness-coded staging: pillow alongside Oura ring, sleep tracker graph, supplement bottles, clean nightstand aesthetic. Treat the pillow as part of a curated sleep setup. Trust badges (RDS, hypoallergenic) belong here. Visual style: clean, light, slightly clinical-leaning-warm.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TRACK 4 PRODUCT-AWARE -- FULL WIDTH -->
+  <div class="track-card t4 full" style="margin-top:14px;">
+    <div class="track-top"></div>
+    <div class="track-body">
+      <div class="track-eyebrow">Track 04 -- Retargeting</div>
+      <div class="track-name">Product-Aware -- Cart Abandoners / Site Visitors</div>
+      <div class="track-meta">35 assets -- Price shown -- Retargeting voice</div>
+      <div class="track-goal">People who already know FluffCo and have not pulled the trigger. The voice changes: less "introducing," more "still thinking about it?" Acknowledge they have seen the brand before. Surface the price, the social proof, and the last objection-killers. Low asset volume because retargeting audiences are small -- creative should be sharp, not scaled.</div>
+      <div class="two-col">
+        <div class="copy-block">
+          <div class="copy-block-title">10 headlines -- Price &amp; urgency, retargeting voice</div>
+          <div class="copy-item">"Still thinking about it? Here is the price one more time. $69.90."</div>
+          <div class="copy-item">"You looked. You closed the tab. The pillow is still $69.90."</div>
+          <div class="copy-item">"The $46 discount is not waiting around forever"</div>
+          <div class="copy-item">"We saved your spot. Pillow is $69.90, free shipping, 100-night trial."</div>
+          <div class="copy-item">"Back to remind you: $200 hotel pillow vs $69.90 FluffCo"</div>
+          <div class="copy-item">"You almost bought it. Here is what you'd be sleeping on tonight."</div>
+          <div class="copy-item">"Still on the fence? 794,000 sleepers already got off it."</div>
+          <div class="copy-item">"Last week you were one click away. The math has not changed."</div>
+          <div class="copy-item">"The pillow is still here. Free shipping, 100-night trial, $69.90."</div>
+          <div class="copy-item">"We are not going to chase you. But the pillow is good and the price is fair."</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-block-title">10 headlines -- Review-driven, retargeting voice</div>
+          <div class="copy-item">"What people who actually pulled the trigger have to say"</div>
+          <div class="copy-item">"If you needed one more review, here is what 794,000 buyers think"</div>
+          <div class="copy-item">"The thing every single five-star review keeps mentioning"</div>
+          <div class="copy-item">"She bought it three weeks ago. Read what she said this morning."</div>
+          <div class="copy-item">"Read 12 reviews. Then decide."</div>
+          <div class="copy-item">"What you'd be hearing from yourself in two weeks"</div>
+          <div class="copy-item">"Honest customer take: 'I am angry I waited this long.'"</div>
+          <div class="copy-item">"One verified review: 'My only regret is buying just one.'"</div>
+          <div class="copy-item">"The reviews are not subtle. Three weeks in, people are evangelists."</div>
+          <div class="copy-item">"What 794,000 sleepers say when nobody is paying them to say it"</div>
+        </div>
+      </div>
+      <div class="visual-note">Retargeting tells: subtle "we noticed you" framing without being creepy. Could include UI-like elements (browser tab close icon, cart icon, "saved item" badge) integrated tastefully. Price visible. 5-star reviews dominant. CTA: "Pick up where you left off" / "Complete your order" / "Shop now."</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================= -->
+<!-- SECTION 2 DIVIDER         -->
+<!-- ========================= -->
+<div class="section-divider">
+  <div class="section-divider-eyebrow">Section 2 -- 250 Assets</div>
+  <div class="section-divider-title">10 New "Reasons" Landing Pages -- 25 Assets Each</div>
+  <div class="section-divider-sub">Each LP is its own creative angle with its own dedicated URL. Assets in each LP block must drive to the LP's specific URL -- not the main get.fluff.co landing page. Each LP gets 20 example headlines and a focused visual direction.</div>
+</div>
+
+<!-- SECTION 2 -- LP CARDS -->
+<div class="section">
+  <div class="section-eyebrow">Landing Page Briefs -- Section 2</div>
+  <div class="info-box" style="margin-bottom:18px;"><strong>Destination URL discipline:</strong> Each of the 250 Section 2 assets links to ONE of the 10 URLs below, matching the angle of the asset. Do not point a chiropractor-angle asset at the gift LP. The CTA "Shop Now" / "Learn More" links to the LP, not to get.fluff.co/product. Blitzads to QC URL-asset matching before delivery.</div>
+
+  <div class="lp-grid">
+
+    <!-- LP 1 LUXURY -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">LP 01 -- Luxury / Hotel</div>
+          <div class="lp-name">"8 Reasons The Pillow At The Four Seasons Is Better Than Yours"</div>
+          <div class="lp-url">get.fluff.co/reasons/8-reasons-the-four-seasons-pillow-beats-yours</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">25 assets</span></div>
+      </div>
+      <div class="lp-goal">Lead with the editorial promise of the LP title. Position FluffCo as the pillow you'd find at the world's most expensive hotels. Aspirational tone. Hotel imagery welcome. Headlines should feel like magazine cover lines, not direct-response ads.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"8 reasons the best hotel pillows feel different from yours"</div>
+        <div class="copy-item">"What luxury hotels know about pillows that most brands skip"</div>
+        <div class="copy-item">"8 things separating your bed from a $1,200-a-night room"</div>
+        <div class="copy-item">"The pillow at the world's best hotels. Now available outside them."</div>
+        <div class="copy-item">"Why no luxury hotel cheaps out on the pillow"</div>
+        <div class="copy-item">"The category every five-star hotel agrees on"</div>
+        <div class="copy-item">"8 reasons luxury hotels stopped using real down"</div>
+        <div class="copy-item">"The pillow audit your bedroom is failing"</div>
+        <div class="copy-item">"8 things the world's best hotels do that one purchase replicates"</div>
+        <div class="copy-item">"Why every luxury hotel bets on the pillow, not just the mattress"</div>
+        <div class="copy-item">"Hotel sleep is engineered. Home sleep usually isn't."</div>
+        <div class="copy-item">"8 reasons hotel sleep feels different. Most of them are the pillow."</div>
+        <div class="copy-item">"What separates a $79 hotel from a $799 one? It starts with the pillow."</div>
+        <div class="copy-item">"8 specs the world's best hotels demand from their pillows"</div>
+        <div class="copy-item">"The pillow you've slept on at the best hotels. Available without the room rate."</div>
+        <div class="copy-item">"Why luxury hotels switched to down alternative years ago"</div>
+        <div class="copy-item">"8 things the best hotels do for sleep that you can copy in one buy"</div>
+        <div class="copy-item">"If you've ever wished your bed felt like a five-star hotel, this is how"</div>
+        <div class="copy-item">"8 reasons hotel pillows feel better than yours"</div>
+        <div class="copy-item">"The pillow spec five-star hotels quietly agreed on"</div>
+      </div>
+      <div class="lp-visual">Visual: editorial luxury-hotel suite scenes, brass and marble details, soft sheers, late-afternoon golden light. The pillow is positioned as the hero of an aspirational hotel room. No price in-asset.</div>
+    </div>
+
+    <!-- LP 2 NECK PAIN -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">LP 02 -- Neck Pain</div>
+          <div class="lp-name">"7 Reasons You Keep Waking Up With A Sore Neck"</div>
+          <div class="lp-url">get.fluff.co/reasons/7-reasons-your-pillow-is-causing-neck-pain</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">25 assets</span></div>
+      </div>
+      <div class="lp-goal">Problem-led. Speak to people who wake up with neck pain and have not connected it to their pillow. Symptom-named, evidence-feeling copy. No hotel imagery. Pillow as the diagnosed cause.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"7 reasons the pillow is where neck comfort starts"</div>
+        <div class="copy-item">"Mornings hit different on the right pillow"</div>
+        <div class="copy-item">"7 ways an old pillow changes your mornings"</div>
+        <div class="copy-item">"Stiff mornings? The pillow is usually the variable"</div>
+        <div class="copy-item">"7 reasons pillow loft matters more than people realize"</div>
+        <div class="copy-item">"7 things a great pillow does that a flat one can't"</div>
+        <div class="copy-item">"Sleep specialists always ask about the pillow first. Here's why."</div>
+        <div class="copy-item">"7 signs your pillow has quietly given up"</div>
+        <div class="copy-item">"The simplest fix nobody talks about: the pillow"</div>
+        <div class="copy-item">"7 reasons neck comfort starts at the pillow, not the mattress"</div>
+        <div class="copy-item">"7 things side sleepers should look for in a pillow"</div>
+        <div class="copy-item">"Why foam pillows quietly underperform"</div>
+        <div class="copy-item">"7 reasons the pillow is the first thing to upgrade"</div>
+        <div class="copy-item">"7 things hotel-grade pillows do that drugstore ones don't"</div>
+        <div class="copy-item">"How mornings feel on a properly engineered pillow"</div>
+        <div class="copy-item">"7 things a bad pillow does to spinal alignment"</div>
+        <div class="copy-item">"The 7 specs every great pillow shares"</div>
+        <div class="copy-item">"The most-overlooked piece of your bed"</div>
+        <div class="copy-item">"7 reasons pillow loft is an engineering choice, not a marketing claim"</div>
+        <div class="copy-item">"What a properly engineered pillow actually does for sleep"</div>
+      </div>
+      <div class="lp-visual">Visual: morning-stiff-neck visuals (tasteful, not clinical). Person rubbing neck, hand on shoulder. Flat or wadded-up bad pillow as visual antagonist. Avoid hotel-luxury cues -- this LP is about pain, not aspiration.</div>
+    </div>
+
+    <!-- LP 3 REPEAT / COUPLES -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">LP 03 -- Repeat Purchase / Couples</div>
+          <div class="lp-name">"6 Reasons 8 Out Of 10 Fluff Buyers Order A Second One"</div>
+          <div class="lp-url">get.fluff.co/reasons/6-reasons-couples-are-upgrading-to-fluffco</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">25 assets</span></div>
+      </div>
+      <div class="lp-goal">Dual angle on one LP: (a) repeat-purchase stat (8/10 buyers order a second one) and (b) couples upgrading their household pillows together. Both angles drive to the same URL. Creative split across the 25 assets: ~half lead with the stat, half lead with the couples framing.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"6 reasons couples are upgrading to FluffCo"</div>
+        <div class="copy-item">"6 reasons 8 out of 10 buyers order a second one"</div>
+        <div class="copy-item">"Why people who buy one come back for four"</div>
+        <div class="copy-item">"The pillow couples agree on. Finally."</div>
+        <div class="copy-item">"6 reasons one is never enough"</div>
+        <div class="copy-item">"Why 8 out of 10 buyers order again within 30 days"</div>
+        <div class="copy-item">"She bought one. He stole it. So she bought four."</div>
+        <div class="copy-item">"6 reasons your partner is going to want one of their own"</div>
+        <div class="copy-item">"The pillow nobody is willing to share"</div>
+        <div class="copy-item">"6 reasons FluffCo households end up with matching pairs"</div>
+        <div class="copy-item">"One pillow ends the pillow argument. Two pillows end every argument."</div>
+        <div class="copy-item">"Why couples upgrade their pillows before their mattress"</div>
+        <div class="copy-item">"6 reasons buying two is cheaper than fighting over one"</div>
+        <div class="copy-item">"She slept on his. Now they both have their own."</div>
+        <div class="copy-item">"6 reasons the second one ships within two weeks"</div>
+        <div class="copy-item">"The pillow shortage in your house is real. Here is the fix."</div>
+        <div class="copy-item">"6 reasons most FluffCo orders are not the customer's first"</div>
+        <div class="copy-item">"What 794,000 sleepers have in common: they ordered again"</div>
+        <div class="copy-item">"6 reasons the smart move is buying two from the start"</div>
+        <div class="copy-item">"Why one is great and two is a household upgrade"</div>
+      </div>
+      <div class="lp-visual">Visual: two-pillow beds, matching pairs, couples-coded bedrooms. The "8 out of 10" stat can show as a clean text overlay or as a small data visualization. Avoid stock-photo couple cliches -- aim for real-feeling, lived-in bedrooms.</div>
+    </div>
+
+    <!-- LP 4 DURABILITY -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">LP 04 -- Durability</div>
+          <div class="lp-name">"8 Reasons 794,000 Sleepers Have Stopped Replacing Their Pillow"</div>
+          <div class="lp-url">get.fluff.co/reasons/8-reasons-sleepers-stopped-replacing-their-pillow</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">25 assets</span></div>
+      </div>
+      <div class="lp-goal">Value-and-longevity angle. Most pillows die in 6-18 months. FluffCo lasts. Lead with the 794K social-proof number and the "stopped replacing" framing. Long-term cost math is in play.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"8 reasons 794,000 sleepers have stopped replacing their pillow"</div>
+        <div class="copy-item">"The pillow that does not need to be replaced every year"</div>
+        <div class="copy-item">"8 reasons most pillows die in 12 months. This one does not."</div>
+        <div class="copy-item">"If your pillow is two years old, you already know the problem"</div>
+        <div class="copy-item">"8 ways this pillow outlasts everything else in your bed"</div>
+        <div class="copy-item">"Why the pillow refresh cycle is broken. And how to opt out."</div>
+        <div class="copy-item">"8 reasons your last pillow gave up too soon"</div>
+        <div class="copy-item">"The pillow people stopped throwing away"</div>
+        <div class="copy-item">"8 reasons FluffCo holds its loft past year three"</div>
+        <div class="copy-item">"The pillow built to age the way good things age"</div>
+        <div class="copy-item">"8 reasons the pillow refresh shelf at Target is a trap"</div>
+        <div class="copy-item">"Why $20 pillows cost more than $69 pillows over five years"</div>
+        <div class="copy-item">"8 things built into FluffCo that cheap pillows skip"</div>
+        <div class="copy-item">"The pillow you buy once and forget you have to replace"</div>
+        <div class="copy-item">"8 reasons pillow durability is a real spec, not a marketing line"</div>
+        <div class="copy-item">"Why hotels do not replace these pillows every six months"</div>
+        <div class="copy-item">"8 ways FluffCo fill holds its shape under nightly use"</div>
+        <div class="copy-item">"The pillow that is older than your iPhone and still works better"</div>
+        <div class="copy-item">"8 reasons replacing pillows yearly is the wrong strategy"</div>
+        <div class="copy-item">"Stop paying for new pillows. Pay once for a good one."</div>
+      </div>
+      <div class="lp-visual">Visual: side-by-side comparison of a worn-out flat pillow vs FluffCo holding its loft. Time-marker overlays ("Month 18," "Year 3") can reinforce the durability claim. Show pillow-stack at different ages.</div>
+    </div>
+
+    <!-- LP 5 HOTEL MARKUP -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">LP 05 -- Hotel Markup</div>
+          <div class="lp-name">"7 Reasons Hotel Sleep Officers Quietly Hate We Sell This Pillow Direct"</div>
+          <div class="lp-url">get.fluff.co/reasons/7-reasons-hotel-sleep-officers-hate-we-sell-direct</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">25 assets</span></div>
+      </div>
+      <div class="lp-goal">Industry-insider tone. Position DTC as the disruptor of the hotel-pillow markup. Slightly cheeky, suggests insider knowledge. Use only generic category references -- "luxury hotels," "5-star hotels," "the world's best hotels" -- never named hotel brands. Tone is observational, not combative.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"7 reasons hotel-grade sleep is available direct now"</div>
+        <div class="copy-item">"The pillow category that finally went direct-to-consumer"</div>
+        <div class="copy-item">"7 reasons luxury sleep no longer needs a luxury hotel"</div>
+        <div class="copy-item">"Why hotel-quality pillows used to cost more than they had to"</div>
+        <div class="copy-item">"7 things the hotel industry hasn't loved about the DTC era"</div>
+        <div class="copy-item">"The pillow you've felt at the best hotels. Now sold direct."</div>
+        <div class="copy-item">"7 reasons hotel-grade fill is now affordable"</div>
+        <div class="copy-item">"Why the hotel markup on pillows stopped making sense"</div>
+        <div class="copy-item">"7 reasons direct-to-consumer made luxury sleep accessible"</div>
+        <div class="copy-item">"Hotel-quality sleep at home, finally for the right price"</div>
+        <div class="copy-item">"7 things you used to need a room key to experience"</div>
+        <div class="copy-item">"Why hotel sleep was overpriced for so long"</div>
+        <div class="copy-item">"7 reasons there's no middle-man on hotel pillows anymore"</div>
+        <div class="copy-item">"Why staying at a hotel is the most expensive pillow test"</div>
+        <div class="copy-item">"7 reasons the hotel-grade pillow finally got affordable"</div>
+        <div class="copy-item">"The same spec the world's best hotels use. One third of the price."</div>
+        <div class="copy-item">"7 things DTC fixed about luxury sleep"</div>
+        <div class="copy-item">"Why hotel-grade fill is now available without the hotel-grade price"</div>
+        <div class="copy-item">"7 reasons buying direct is the smart way to luxury sleep"</div>
+        <div class="copy-item">"Same pillow specification. No room key required."</div>
+      </div>
+      <div class="lp-visual">Visual: receipt-style price comparison (hotel rate vs FluffCo), "redacted document" aesthetic for the hotel-industry-secret framing, or split visual of a hotel concierge desk vs a FluffCo box on a doorstep. Slightly editorial / journalism-coded look.</div>
+    </div>
+
+    <!-- LP 6 LOWER BACK PAIN -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">LP 06 -- Lower Back Pain</div>
+          <div class="lp-name">"6 Reasons Your Pillow Is The Real Cause Of Your Lower Back Pain"</div>
+          <div class="lp-url">get.fluff.co/reasons/6-reasons-your-pillow-is-causing-back-pain</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">25 assets</span></div>
+      </div>
+      <div class="lp-goal">The counterintuitive reframe: lower back pain starts at the pillow. Educational tone with a problem-aware edge. Spinal-alignment angle. Avoid alarm; lean diagnostic and authoritative.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"6 reasons spinal alignment starts at the pillow"</div>
+        <div class="copy-item">"6 reasons the pillow matters more than the mattress for back support"</div>
+        <div class="copy-item">"6 things a worn-out pillow does to spinal alignment"</div>
+        <div class="copy-item">"Why the pillow is the first thing sleep specialists discuss"</div>
+        <div class="copy-item">"6 reasons pillow loft affects more than just the neck"</div>
+        <div class="copy-item">"6 ways pillow choice changes side-sleeping alignment"</div>
+        <div class="copy-item">"Why upgrading the pillow is the smaller, smarter change"</div>
+        <div class="copy-item">"The pillow is six inches off the bed. Its impact is felt all the way down."</div>
+        <div class="copy-item">"6 reasons spinal alignment starts with what's under your head"</div>
+        <div class="copy-item">"Why the right pillow does what a $2,000 mattress can't"</div>
+        <div class="copy-item">"6 reasons a flat pillow puts your spine in the wrong position"</div>
+        <div class="copy-item">"What proper pillow loft does for your whole spine"</div>
+        <div class="copy-item">"6 reasons changing the pillow can change the whole sleep system"</div>
+        <div class="copy-item">"Why pillow specs matter from your neck to your hips"</div>
+        <div class="copy-item">"6 reasons sleep posture starts at the pillow"</div>
+        <div class="copy-item">"6 signs a pillow has lost its support"</div>
+        <div class="copy-item">"Why the cheapest sleep upgrade often has the biggest impact"</div>
+        <div class="copy-item">"6 things to look for in a pillow built for proper alignment"</div>
+        <div class="copy-item">"Why pillow choice is the most overlooked variable in sleep"</div>
+        <div class="copy-item">"The pillow engineered for the way you actually sleep"</div>
+      </div>
+      <div class="lp-visual">Visual: spinal-alignment illustrations (simple, editorial), side-sleeping silhouettes showing good vs bad spinal curve. Diagnostic aesthetic. Trustworthy, slightly clinical. No graphic medical imagery.</div>
+    </div>
+
+    <!-- LP 7 SNORING -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">LP 07 -- Partner / Snoring</div>
+          <div class="lp-name">"7 Reasons Your Partner's Snoring Got Worse This Year"</div>
+          <div class="lp-url">https://get.fluff.co/reasons/7-reasons-your-partners-snoring-got-worse</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">25 assets</span></div>
+      </div>
+      <div class="lp-goal">Partner-snoring angle reframed as a pillow problem, not a person problem. Speak to the non-snoring partner who is losing sleep. Slightly conspiratorial tone. The fix is simple and the partner does not need to do anything weird (no mouth guards, no nose strips).</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"7 reasons pillow loft changes the bedroom soundscape"</div>
+        <div class="copy-item">"7 ways the right pillow supports quieter nights"</div>
+        <div class="copy-item">"How a properly lofted pillow changes shared sleep"</div>
+        <div class="copy-item">"7 things pillow loft does for side sleepers"</div>
+        <div class="copy-item">"7 reasons couples notice the difference after a pillow upgrade"</div>
+        <div class="copy-item">"The pillow change that ends a lot of midnight switching to the couch"</div>
+        <div class="copy-item">"7 ways a good pillow supports side-sleepers all night"</div>
+        <div class="copy-item">"Why pillow loft and airway alignment are connected"</div>
+        <div class="copy-item">"7 reasons the pillow matters in any shared bedroom"</div>
+        <div class="copy-item">"Quieter sleep often starts with a better pillow"</div>
+        <div class="copy-item">"7 things couples mention after switching pillows"</div>
+        <div class="copy-item">"Why two pillows can change how a household sleeps"</div>
+        <div class="copy-item">"7 reasons side-sleepers need engineered loft"</div>
+        <div class="copy-item">"The pillow that supports the way couples actually sleep"</div>
+        <div class="copy-item">"7 things to know about pillow loft and breathing"</div>
+        <div class="copy-item">"Why pillow age affects more than just comfort"</div>
+        <div class="copy-item">"7 reasons the simplest fix is often the pillow"</div>
+        <div class="copy-item">"Sleep quality is shared in a bedroom. So is the pillow choice."</div>
+        <div class="copy-item">"7 reasons couples sleep better on engineered loft"</div>
+        <div class="copy-item">"Why couples often end up with matching pillows"</div>
+      </div>
+      <div class="lp-visual">Visual: two-pillow bedrooms with one partner peacefully asleep. Soundwave-coded overlays (subtle, not literal) showing the "before quiet / after quiet" idea. Avoid showing snoring person as the villain -- frame the pillow as the variable.</div>
+    </div>
+
+    <!-- LP 8 CHIROPRACTOR -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">LP 08 -- Chiropractor</div>
+          <div class="lp-name">"8 Reasons Chiropractors Recommend A New Pillow First"</div>
+          <div class="lp-url">get.fluff.co/reasons/8-reasons-chiropractors-recommend-a-new-pillow-first</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">25 assets</span></div>
+      </div>
+      <div class="lp-goal">Authority-led. Borrow chiropractic credibility for pillow purchase. Authoritative, slightly clinical tone. Distinct from LP 6 (Lower Back Pain) -- this LP is about *what specialists recommend* rather than the pain itself.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"8 reasons sleep specialists talk about the pillow first"</div>
+        <div class="copy-item">"Why the pillow comes up before the mattress in any sleep talk"</div>
+        <div class="copy-item">"8 reasons pillow loft matters for your neck"</div>
+        <div class="copy-item">"What sleep pros look at first in any sleep setup"</div>
+        <div class="copy-item">"8 things a properly engineered pillow does that others skip"</div>
+        <div class="copy-item">"Why pillow choice decides sleep quality before anything else does"</div>
+        <div class="copy-item">"8 reasons the smallest piece of the bed has the biggest impact"</div>
+        <div class="copy-item">"The pillow specifications that align with side-sleeper anatomy"</div>
+        <div class="copy-item">"8 things the best hotels and sleep experts agree on"</div>
+        <div class="copy-item">"Why pillow age matters more than people think"</div>
+        <div class="copy-item">"8 reasons neck alignment starts at the pillow, not the mattress"</div>
+        <div class="copy-item">"The simplest sleep upgrade most people overlook"</div>
+        <div class="copy-item">"8 things separating a great pillow from a good one"</div>
+        <div class="copy-item">"Why $69.90 is the smartest spend in your bedroom"</div>
+        <div class="copy-item">"8 things to look for in a pillow you'll use every night"</div>
+        <div class="copy-item">"Why pillow specs matter more than pillow brand"</div>
+        <div class="copy-item">"8 reasons pillow loft is engineering, not marketing"</div>
+        <div class="copy-item">"What a great pillow does that you only notice in week three"</div>
+        <div class="copy-item">"The 8 specs every well-designed pillow shares"</div>
+        <div class="copy-item">"Good sleep is engineered. It starts at the pillow."</div>
+      </div>
+      <div class="lp-visual">Visual: clinical-leaning-warm aesthetic. Cervical-spine silhouettes, white-coat-coded credibility cues (without literal staged doctor stock photos). Type can lean editorial-medical.</div>
+    </div>
+
+    <!-- LP 9 ENERGY / FATIGUE -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">LP 09 -- Energy / Fatigue</div>
+          <div class="lp-name">"6 Reasons You're Exhausted At 9am Despite Sleeping 8 Hours"</div>
+          <div class="lp-url">get.fluff.co/reasons/6-reasons-youre-exhausted-at-9am-despite-sleeping-8-hours</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">25 assets</span></div>
+      </div>
+      <div class="lp-goal">Energy-as-a-pillow-problem angle. Speak to people who sleep "enough" but feel tired. Quality-vs-quantity reframe. Slightly diagnostic, slightly empowering.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"6 reasons sleep quality is engineered, not just clocked"</div>
+        <div class="copy-item">"Why 8 hours of sleep feels different on different pillows"</div>
+        <div class="copy-item">"6 things that turn sleep hours into actual rest"</div>
+        <div class="copy-item">"The sleep variable most people skip: the pillow"</div>
+        <div class="copy-item">"6 reasons pillow quality matters more than people realize"</div>
+        <div class="copy-item">"Sleep duration is one number. Sleep quality is the pillow."</div>
+        <div class="copy-item">"6 things that decide whether mornings actually feel rested"</div>
+        <div class="copy-item">"When your sleep tracker says 8 hours but you feel 4"</div>
+        <div class="copy-item">"6 reasons restful sleep is built, not just clocked in hours"</div>
+        <div class="copy-item">"What a great pillow does for REM and deep sleep"</div>
+        <div class="copy-item">"6 ways pillow choice changes sleep quality"</div>
+        <div class="copy-item">"The pillow is what turns sleep hours into actual rest"</div>
+        <div class="copy-item">"6 reasons sleep quality beats sleep quantity"</div>
+        <div class="copy-item">"Why some people sleep less but feel better"</div>
+        <div class="copy-item">"6 ways pillow specs affect REM and deep sleep"</div>
+        <div class="copy-item">"Quality sleep starts with pillow choice"</div>
+        <div class="copy-item">"6 reasons the simplest sleep upgrade is also the cheapest"</div>
+        <div class="copy-item">"Why mornings feel different on a properly built pillow"</div>
+        <div class="copy-item">"6 things engineered into a great pillow that you feel by morning"</div>
+        <div class="copy-item">"Sleep hours add up. Pillow quality decides what they add up to."</div>
+      </div>
+      <div class="lp-visual">Visual: morning-coffee-still-tired scenes, sleep tracker graphs (8 hours, low quality score), under-eye morning faces. Time-of-day cues (clock at 9am, daylight). Diagnostic and empathetic.</div>
+    </div>
+
+    <!-- LP 10 GIFT -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">LP 10 -- Gift</div>
+          <div class="lp-name">"5 Reasons This Pillow Is The Gift They'll Actually Use Every Night"</div>
+          <div class="lp-url">https://get.fluff.co/reasons/5-reasons-this-pillow-is-the-perfect-gift</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">25 assets</span></div>
+      </div>
+      <div class="lp-goal">Gift-occasion driven. Position FluffCo as the gift that gets actual daily use, vs the gifts that collect dust. Universal-relevance occasions (Mother's Day, anniversaries, housewarming, retirement, holiday). Warm, generous tone. Slight humor about bad gift-giving acceptable.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"5 reasons this pillow is the gift they'll actually use every night"</div>
+        <div class="copy-item">"The gift that gets used 365 nights a year"</div>
+        <div class="copy-item">"5 reasons your hardest-to-shop-for person will love this"</div>
+        <div class="copy-item">"Why most gifts collect dust. This one collects sleep."</div>
+        <div class="copy-item">"5 reasons a pillow beats every novelty gift you almost bought"</div>
+        <div class="copy-item">"The gift for the person who has everything except a good pillow"</div>
+        <div class="copy-item">"5 reasons gifts that improve sleep beat gifts that improve a shelf"</div>
+        <div class="copy-item">"What to give the parent who never asks for anything"</div>
+        <div class="copy-item">"5 reasons partners give this pillow to each other"</div>
+        <div class="copy-item">"Gifting hotel-quality sleep without the hotel-quality price tag"</div>
+        <div class="copy-item">"5 reasons this is the housewarming gift people remember"</div>
+        <div class="copy-item">"The gift they will text you about three weeks later"</div>
+        <div class="copy-item">"5 reasons this is the upgrade your sister will not buy for herself"</div>
+        <div class="copy-item">"Why anniversary gifts that improve sleep beat the alternatives"</div>
+        <div class="copy-item">"5 reasons a $69.90 gift can change someone's mornings"</div>
+        <div class="copy-item">"Gift-giving with proof: 794,000 sleepers cannot be wrong"</div>
+        <div class="copy-item">"5 reasons retirement gifts should be useful, not decorative"</div>
+        <div class="copy-item">"The Mother's Day gift that gets used instead of displayed"</div>
+        <div class="copy-item">"5 reasons this pillow ends up gifted in pairs"</div>
+        <div class="copy-item">"Give a hotel-quality pillow. They will text you in week three."</div>
+      </div>
+      <div class="lp-visual">Visual: gift-wrapped pillow boxes, ribbon, gift card scenes. Bedroom scenes with the pillow alongside a handwritten note. Occasion-flexible -- visuals should not lock to one holiday so the assets run year-round.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- STANDING INSTRUCTION -->
+<div class="standing">
+  <h2>Standing Instruction for Blitzads</h2>
+  <p>Do not produce 500 assets as visual templates with swapped copy. <strong>Section 1 must feel meaningfully distinct from MAY W3 -- not a continuation by volume, but by audience cut and creative entry-point.</strong> Within a track, no two assets should be variations of each other.</p>
+  <p><strong>Section 1 reminders:</strong> Track 1 (Unaware) carries 7 audience cuts -- each cut should feel visually anchored to its life stage. Track 2 stays travel-coded. Track 3 stays wellness-coded. Track 4 uses retargeting-voice copy, not introduction-voice copy.</p>
+  <p><strong>Section 2 URL discipline:</strong> Each LP asset must drive to its own dedicated URL. Do not point chiropractor-angle assets at the gift LP. Blitzads to QC URL-asset matching before delivery.</p>
+  <p>If a Section 2 LP card asset could swap places with an asset from a different LP without anyone noticing, it is not distinct enough. Regenerate.</p>
+  <p><strong>Meta-safety is non-negotiable.</strong> If a headline names a hotel brand, calls out a viewer's body or condition, makes a medical claim, or could be flagged as a personal-attribute attack, it does not ship. The Meta Ad Policy block above and the 12 reference headlines define the safe-but-strong target.</p>
+  <p>If there are questions on visual direction, <strong>the 9 winning reference assets from MAY W3 remain the brand benchmark.</strong> Match their tone, palette, and quality standard -- then go beyond them.</p>
+  <div class="standing-grid">
+    <div class="standing-item"><div class="standing-item-label">Quality check</div><div class="standing-item-val">Blitzads QC before submission. Client approves or disapproves on delivery.</div></div>
+    <div class="standing-item"><div class="standing-item-label">Delivery cadence</div><div class="standing-item-val">MAY W4 - One time (for now)</div></div>
+    <div class="standing-item"><div class="standing-item-label">Attach with this brief</div><div class="standing-item-val">9 winning reference assets + Safe Area Guide PNG + 10 LP URL list</div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">BlitzAds x Skyvane</div>
+  <div class="footer-note">Creative Brief -- May W4 2026 -- Prepared by Skyvane</div>
+</div>
+
+</div>
+</body>
+</html>
