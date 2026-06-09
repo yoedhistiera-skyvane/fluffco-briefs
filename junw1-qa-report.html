@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FluffCo June W1 - Creative QA (Refined)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3ECE1;--panel:#FCF8F2;--panel2:#EFE6D7;--txt:#2B2A66;--ink:#2B2A66;--muted:#8B86A2;--border:#E6DBCB;--pink:#F0668E;--red:#E0392B;--high:#D23A2C;--med:#C07C1E;--low:#5A57B8;--ok:#3E9C68;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.55;}
+.wrap{max-width:1100px;margin:0 auto;padding:36px 24px 64px;}
+.brandbar{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+.logo{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:30px;letter-spacing:-0.015em;line-height:1;}
+.logo .lf{color:var(--ink);} .logo .lc{color:var(--pink);} .logo .lc sup{font-size:0.46em;top:-0.62em;font-weight:600;}
+.brandbar .tag{font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);border-left:1px solid var(--border);padding-left:14px;}
+h1{font-family:'Fraunces',Georgia,serif;font-size:34px;font-weight:600;margin:0 0 6px;letter-spacing:-0.02em;color:var(--ink);}
+h2{font-family:'Fraunces',Georgia,serif;font-size:21px;font-weight:600;margin:38px 0 14px;letter-spacing:-0.01em;color:var(--ink);}
+.sub{color:var(--muted);margin-bottom:26px;font-size:14px;}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:26px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px 20px;box-shadow:0 1px 2px rgba(43,42,102,0.04);}
+.card .label{font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px;}
+.card .value{font-family:'Fraunces',Georgia,serif;font-size:34px;font-weight:600;letter-spacing:-0.02em;line-height:1;}
+.card.ok .value{color:var(--ok);} .card.amber .value{color:var(--med);}
+.alert{background:#FBE9E4;border:1px solid #E0392B33;border-left:4px solid var(--red);border-radius:10px;padding:15px 18px;margin:10px 0;}
+.alert h3{margin:0 0 5px;color:var(--red);font-size:15px;font-weight:600;} .alert p{margin:0;color:#8a3326;font-size:13px;}
+.alert.green{background:#E8F4ED;border-color:#3E9C6833;border-left-color:var(--ok);} .alert.green h3{color:#2f7d52;} .alert.green p{color:#356b4a;}
+.alert.amber{background:#F8F0DB;border-color:#C07C1E33;border-left-color:var(--med);} .alert.amber h3{color:#9a6413;} .alert.amber p{color:#7c5a20;}
+.alert.info{background:#ECEBF8;border-color:#5A57B833;border-left-color:var(--low);} .alert.info h3{color:#4744a3;} .alert.info p{color:#4d4a85;}
+.alert code{background:#ffffff80;border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:12px;font-family:"SF Mono",ui-monospace,Menlo,monospace;}
+table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:10px;overflow:hidden;border:1px solid var(--border);}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+th{background:var(--panel2);font-size:11px;text-transform:uppercase;letter-spacing:0.09em;color:var(--muted);}
+tr:last-child td{border-bottom:none;}
+.sec-cell{font-weight:700;color:var(--ink);white-space:nowrap;}
+.assets-cell{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:12px;color:#3a3960;white-space:nowrap;}
+.sev-badge{display:inline-block;padding:3px 9px;border-radius:5px;font-size:11px;font-weight:700;letter-spacing:0.04em;}
+.sev-ai{background:#F7DAD5;color:#B22a1c;} .sev-design{background:#F3E6CB;color:#946012;} .sev-minor{background:#E4E3F4;color:#4845a6;}
+.note{font-size:12px;color:var(--muted);margin-top:10px;}
+.crit{font-weight:600;color:var(--ink);}
+</style></head><body><div class="wrap">
+<div class="brandbar"><span class="logo"><span class="lf">FLUFF</span><span class="lc">C<sup>o</sup></span></span><span class="tag">Creative QA &middot; June Week 1 &middot; Refined</span></div>
+<h1>June W1 - Creative QA (Refined)</h1>
+<div class="sub">FluffCo pillow &middot; 493 statics + 20 motion graphics reviewed &middot; scoped to what matters: ship-blocking risk (named hotel brands &amp; aggressive Meta-reject copy) + AI artifacts. Price at $69, FluffCo logo on the pillow, generic "hotel" language, and CTA color are approved and not flagged.</div>
+
+<div class="summary">
+<div class="card"><div class="label">Assets reviewed</div><div class="value">513</div></div>
+<div class="card ok"><div class="label">Named hotel brands</div><div class="value">0</div></div>
+<div class="card ok"><div class="label">Aggressive Meta copy</div><div class="value">0</div></div>
+<div class="card amber"><div class="label">AI artifacts</div><div class="value">4</div></div>
+</div>
+
+<div class="alert green"><h3>&#10003; Clear to ship on IP &amp; Meta-policy</h3><p>No named hotel brands anywhere (all hotel references are generic - "hotel pillows", "5-star hotel", "hotel-grade"). No aggressive, sensational, medical, or personal-attribute copy that would risk Meta rejection. Nothing blocking from the IP / ad-policy side.</p></div>
+
+<div class="alert green"><h3>&#10003; Anatomy / product render: clean</h3><p>Hands, fingers, and faces were inspected on every person-in-frame asset (incl. the AI couple images) - all anatomically normal, no extra fingers or distorted faces. The pillow renders consistently (white + grey corded piping); no warped/melting fabric or impossible folds. Every AI artifact found is text/logo-rendering or one odd object (below).</p></div>
+
+<h2>AI artifacts (4)</h2>
+<table><thead><tr><th>Type</th><th>Severity</th><th>Assets</th><th>Detail</th></tr></thead><tbody>
+<tr><td class="sec-cell">Garbled text</td><td><span class="sev-badge sev-ai">AI</span></td><td class="assets-cell">S01 #62, 64-65, 68, 70-73, 75, 77-79, 112-113</td><td>The "Oprah" wordmark on the award badge renders as an illegible scribble (text-generation artifact). ~14 assets.</td></tr>
+<tr><td class="sec-cell">Malformed logo</td><td><span class="sev-badge sev-ai">AI</span></td><td class="assets-cell">S03 #3</td><td>FluffCo "Co" mark distorted - broken "C" and the raised "o" is a scribbled overlap (logo should be clean navy "FLUFF" + small raised pink "o").</td></tr>
+<tr><td class="sec-cell">Garbled baked-in text</td><td><span class="sev-badge sev-ai">AI</span></td><td class="assets-cell">S02 #8</td><td>The "receipts" on the bed are gibberish AI scribble text; the logo also overlaps the headline, making it unreadable.</td></tr>
+<tr><td class="sec-cell">Impossible object</td><td><span class="sev-badge sev-ai">AI</span></td><td class="assets-cell">S02 #27</td><td>An extra pillow is stuffed into / emerging from the washing-machine drum (floating duplicate / odd geometry).</td></tr>
+</tbody></table>
+<p class="note">All four are visual-generation glitches, not copy choices - they need a re-render (or the badge text recolored/cleaned). The garbled "Oprah" overlaps with the badge design fix below.</p>
+
+<h2>Design fix - award badge</h2>
+<table><thead><tr><th>Section</th><th>Severity</th><th>Affected assets</th><th>Issue</th></tr></thead><tbody>
+<tr><td class="sec-cell">Section 01</td><td><span class="sev-badge sev-design">DESIGN</span></td><td class="assets-cell">#41-73, #75-79, #112-113, #115</td><td>Award badge is off-brand in color (does not match FluffCo palette - navy #424680 / coral / amber). (Garbled "Oprah" text on several - see AI artifacts.)</td></tr>
+<tr><td class="sec-cell">Section 02</td><td><span class="sev-badge sev-design">DESIGN</span></td><td class="assets-cell">#36, #98, #242</td><td>PureWow award badge off-brand color.</td></tr>
+<tr><td class="sec-cell">Motion</td><td><span class="sev-badge sev-design">DESIGN</span></td><td class="assets-cell">Text Build - 020</td><td>End-frame "PureWow 95/100" badge - off-brand color (confirm on full play-through).</td></tr>
+</tbody></table>
+<p class="note">Usage of the press/award mentions is approved - this is purely a design cleanup (color + legibility). Same badge component across all listed assets, so it is one global change.</p>
+
+<h2>Optional - minor copy defects (below your High bar)</h2>
+<p class="note">Not blocking and outside the refined criteria. Listed only so nothing genuinely broken ships silently - ignore if not needed.</p>
+<table><thead><tr><th>Section</th><th>Severity</th><th>Asset</th><th>Issue</th></tr></thead><tbody>
+<tr><td class="sec-cell">Section 03</td><td><span class="sev-badge sev-minor">MINOR</span></td><td class="assets-cell">#102</td><td>Typo in headline: "go fiat" should be "go flat".</td></tr>
+<tr><td class="sec-cell">Section 03</td><td><span class="sev-badge sev-minor">MINOR</span></td><td class="assets-cell">#44, #45, #50, #52, #58</td><td>Internal/brief notes leaked into live subheads (e.g. "Product-only contrast, no body claims").</td></tr>
+<tr><td class="sec-cell">Section 03</td><td><span class="sev-badge sev-minor">MINOR</span></td><td class="assets-cell">#36</td><td>Double space in headline ("Still&nbsp;&nbsp;fluffy").</td></tr>
+<tr><td class="sec-cell">Section 01</td><td><span class="sev-badge sev-minor">MINOR</span></td><td class="assets-cell">#73</td><td>Broken-English headline: "The Pillow 94% Refused To Stop At One Of".</td></tr>
+<tr><td class="sec-cell">Section 01</td><td><span class="sev-badge sev-minor">MINOR</span></td><td class="assets-cell">#2, #4, #7, #9, #12, #15, #88</td><td>No logo present at all (distinct from logo-on-pillow, which is approved).</td></tr>
+</tbody></table>
+
+<p class="note" style="margin-top:24px;">Scope: Section 01 (113) &middot; Section 02 (250) &middot; Section 03 (130) &middot; Motion Graphics (20). Section 01 files are exported at 1072&times;1920 vs the 1080&times;1920 spec (noted for reference, not a flag). Motion graphics were reviewed from poster frames; a manual play-through is recommended to confirm end-cards.</p>
+</div></body></html>
