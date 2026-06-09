@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FluffCo Down Alternative -- Creative Brief JUN W2</title>
+<style>
+@font-face {
+  font-family: 'Recoleta';
+  src: url('https://fluff.co/cdn/shop/t/129/assets/Recoleta-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PPPangram';
+  src: url('https://fluff.co/cdn/shop/t/129/assets/PPPangramSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+:root {
+  --cream: #FAF3EF;
+  --blush: #F5EBE6;
+  --linen: #E4D5CB;
+  --navy: #424680;
+  --navy-dark: #2D2F5A;
+  --coral: #E63946;
+  --dark: #1A1A1A;
+  --mid: #555555;
+  --light: #999999;
+  --green: #1A7A4A;
+  --amber: #F59E0B;
+  --white: #FFFFFF;
+  --border: #E4D5CB;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'PPPangram', 'Helvetica Neue', sans-serif; background: var(--cream); color: var(--dark); font-size: 14px; line-height: 1.7; }
+.page { max-width: 900px; margin: 0 auto; padding: 56px 40px; }
+
+/* HEADER */
+.header { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 28px; margin-bottom: 40px; border-bottom: 2px solid var(--navy); }
+.logo { font-family: 'Recoleta', Georgia, serif; font-size: 36px; color: var(--navy); letter-spacing: -1px; }
+.logo span { color: var(--coral); }
+.header-right { text-align: right; }
+.header-tag { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--light); margin-bottom: 6px; }
+.pills { display: flex; gap: 6px; justify-content: flex-end; flex-wrap: wrap; }
+.pill { font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.5px; }
+.pill-navy { background: var(--navy); color: white; }
+.pill-coral { background: var(--coral); color: white; }
+.pill-outline { border: 1px solid var(--navy); color: var(--navy); }
+
+/* SUMMARY */
+.summary { display: grid; gap: 12px; margin-bottom: 48px; }
+.sum-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px 16px; text-align: center; }
+.sum-num { font-family: 'Recoleta', Georgia, serif; font-size: 32px; color: var(--navy); line-height: 1; }
+.sum-label { font-size: 11px; color: var(--light); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+
+/* SECTION */
+.section { margin-bottom: 48px; }
+.section-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.section-eyebrow::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.section-title { font-family: 'Recoleta', Georgia, serif; font-size: 24px; color: var(--navy); margin-bottom: 16px; }
+.section-divider { margin: 60px 0 36px; padding: 18px 24px; background: var(--navy); color: white; border-radius: 12px; }
+.section-divider-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #FFD580; margin-bottom: 4px; }
+.section-divider-title { font-family: 'Recoleta', Georgia, serif; font-size: 22px; }
+.section-divider-sub { font-size: 12px; opacity: 0.75; margin-top: 6px; }
+
+/* CARDS */
+.card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 14px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+.card-title { font-family: 'Recoleta', Georgia, serif; font-size: 18px; color: var(--navy); }
+.badge { font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
+.badge-coral { background: #FEF0F1; color: var(--coral); }
+.badge-navy { background: #EEEEF8; color: var(--navy); }
+.badge-green { background: #E8F5EE; color: var(--green); }
+.badge-amber { background: #FEF9EC; color: #8A6000; }
+
+/* INFO BOX */
+.info-box { background: var(--blush); border-radius: 10px; padding: 14px 16px; font-size: 13px; color: var(--mid); margin-top: 12px; }
+.info-box strong { color: var(--navy); }
+
+/* 2 COL GRID */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+/* GUARDRAIL */
+.guardrail { border-radius: 10px; padding: 16px; border-left: 3px solid var(--navy); background: var(--blush); }
+.guardrail.red { border-left-color: var(--coral); }
+.guardrail.green { border-left-color: var(--green); }
+.guardrail-title { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; color: var(--navy); }
+.guardrail.red .guardrail-title { color: var(--coral); }
+.guardrail.green .guardrail-title { color: var(--green); }
+ul.glist { list-style: none; padding: 0; }
+ul.glist li { font-size: 13px; color: var(--mid); padding: 5px 0 5px 18px; position: relative; border-bottom: 0.5px solid var(--border); line-height: 1.5; }
+ul.glist li:last-child { border-bottom: none; }
+ul.glist li::before { content: '→'; position: absolute; left: 0; color: var(--coral); font-size: 11px; top: 7px; }
+
+/* COLOR SWATCHES */
+.swatch-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
+.swatch { display: flex; align-items: center; gap: 10px; }
+.dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.08); flex-shrink: 0; }
+.swatch-name { font-size: 12px; font-weight: 500; color: var(--dark); display: block; }
+.swatch-hex { font-size: 11px; color: var(--light); }
+
+/* FONT DEMO */
+.font-demo { display: flex; gap: 14px; margin-top: 12px; }
+.font-card { flex: 1; background: var(--blush); border-radius: 10px; padding: 16px; text-align: center; }
+.font-sample-rec { font-family: 'Recoleta', Georgia, serif; font-size: 24px; color: var(--navy); }
+.font-sample-pan { font-family: 'PPPangram', 'Helvetica Neue', sans-serif; font-size: 16px; font-weight: 500; color: var(--navy); }
+.font-use { font-size: 11px; color: var(--light); margin-top: 4px; }
+
+
+/* META REFERENCE GALLERY */
+.meta-warn { background: #FEF0F1; border-left: 3px solid var(--coral); border-radius: 8px; padding: 12px 14px; font-size: 12px; color: var(--mid); margin-top: 12px; }
+.meta-warn strong { color: var(--coral); }
+
+
+/* LAYOUT REFERENCE -- 2-up */
+.layout-ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px; }
+.layout-ref-item { background: var(--blush); border-radius: 8px; padding: 10px; }
+.layout-ref-item img { width: 100%; height: auto; border-radius: 6px; display: block; }
+.layout-ref-meta { margin-top: 10px; }
+.layout-ref-label { font-family: 'Recoleta', Georgia, serif; font-size: 14px; color: var(--navy); }
+.layout-ref-desc { font-size: 11px; color: var(--light); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+.layout-ref-headline { font-size: 12px; color: var(--mid); margin-top: 6px; font-style: italic; }
+
+/* SAFE AREA */
+.safe-wrap { display: flex; gap: 28px; align-items: flex-start; }
+.phone { width: 110px; flex-shrink: 0; height: 196px; background: #E0D8D0; border-radius: 14px; border: 1.5px solid #AAA; position: relative; overflow: hidden; }
+.z-danger { position: absolute; left: 0; right: 0; background: rgba(230,57,70,0.22); }
+.z-safe { position: absolute; left: 0; right: 0; background: rgba(26,122,74,0.1); border-top: 1.5px dashed #1A7A4A; border-bottom: 1.5px dashed #1A7A4A; }
+.z-label { position: absolute; left: 0; right: 0; text-align: center; font-size: 7px; font-weight: 600; }
+.spec-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.spec-table td { padding: 8px 0; border-bottom: 0.5px solid var(--border); }
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-key { color: var(--mid); }
+.spec-val { font-weight: 500; color: var(--navy); font-family: monospace; font-size: 12px; text-align: right; }
+
+/* DIRECTION BLOCKS */
+.layer-l1 { background: #EEEEF8; border: 1px solid #C4C6E8; border-radius: 12px; padding: 20px; margin-bottom: 12px; }
+.layer-l2 { background: #FEF9EC; border: 1px solid #F0D890; border-radius: 12px; padding: 20px; }
+.layer-title { font-family: 'Recoleta', Georgia, serif; font-size: 17px; color: var(--navy); margin-bottom: 6px; }
+.layer-l2 .layer-title { color: #7A5500; }
+.layer-sub { font-size: 13px; color: #555; margin-bottom: 14px; line-height: 1.6; }
+.layer-l2 .layer-sub { color: #7A5500; }
+
+/* DISTRIBUTION TABLE */
+table.dist { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+table.dist th { background: var(--navy); color: white; padding: 10px 14px; text-align: left; font-size: 11px; letter-spacing: 0.5px; font-weight: 500; }
+table.dist td { padding: 10px 14px; border-bottom: 0.5px solid var(--border); vertical-align: middle; }
+table.dist tr:last-child td { border-bottom: none; font-weight: 500; background: var(--blush); }
+table.dist tr:nth-child(even) td { background: #F8F4F1; }
+
+/* DO DONT */
+.do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+.dont-card { border-radius: 10px; padding: 14px; border-left: 3px solid var(--coral); background: #FEF0F1; }
+.do-card { border-radius: 10px; padding: 14px; border-left: 3px solid var(--green); background: #E8F5EE; }
+.dd-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.dont-card .dd-label { color: var(--coral); }
+.do-card .dd-label { color: var(--green); }
+.dd-item { font-size: 12px; padding: 5px 0; border-bottom: 0.5px solid rgba(0,0,0,0.08); color: var(--dark); line-height: 1.5; }
+.dd-item:last-child { border-bottom: none; }
+.dd-note { font-size: 12px; color: var(--mid); margin-top: 12px; padding: 10px 12px; background: var(--blush); border-radius: 8px; border-left: 3px solid var(--navy); }
+
+/* TRACKS */
+.track-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.track-card { background: white; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.track-card.full { grid-column: 1 / -1; }
+.track-top { height: 4px; }
+.t1 .track-top { background: var(--navy); }
+.t2 .track-top { background: var(--coral); }
+.t3 .track-top { background: var(--amber); }
+.t4 .track-top { background: var(--green); }
+.track-body { padding: 18px 20px; }
+.track-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--light); margin-bottom: 4px; }
+.track-name { font-family: 'Recoleta', Georgia, serif; font-size: 18px; color: var(--navy); margin-bottom: 4px; }
+.track-meta { font-size: 11px; color: var(--light); margin-bottom: 12px; }
+.track-goal { font-size: 13px; color: var(--mid); margin-bottom: 14px; line-height: 1.6; padding-bottom: 12px; border-bottom: 0.5px solid var(--border); }
+.copy-block { background: var(--blush); border-radius: 8px; padding: 12px; margin-bottom: 10px; }
+.copy-block-title { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: var(--light); margin-bottom: 8px; }
+.copy-item { font-size: 12px; color: var(--dark); padding: 5px 0; border-bottom: 0.5px solid var(--border); line-height: 1.5; }
+.copy-item:last-child { border-bottom: none; }
+.visual-note { font-size: 12px; color: var(--mid); font-style: italic; line-height: 1.5; }
+
+/* AUDIENCE CUT SUB-CARD (Track 1) */
+.cut-card { background: #F8F6FB; border: 1px solid #DCD9EA; border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; }
+.cut-card:last-child { margin-bottom: 0; }
+.cut-name { font-size: 12px; font-weight: 500; color: var(--navy); margin-bottom: 2px; }
+.cut-meta { font-size: 10px; color: var(--light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.cut-headlines { font-size: 12px; }
+.cut-headline { padding: 4px 0; border-bottom: 0.5px solid #E4DFF0; line-height: 1.5; color: var(--dark); }
+.cut-headline:last-child { border-bottom: none; }
+
+/* LP CARDS (Section 2 -- compact) */
+.lp-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.lp-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+.lp-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; padding-bottom: 10px; margin-bottom: 12px; border-bottom: 0.5px solid var(--border); }
+.lp-eyebrow { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--coral); margin-bottom: 3px; }
+.lp-name { font-family: 'Recoleta', Georgia, serif; font-size: 16px; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
+.lp-url { font-family: monospace; font-size: 10px; color: var(--mid); word-break: break-all; background: var(--blush); padding: 4px 8px; border-radius: 4px; display: inline-block; }
+.lp-count { font-size: 10px; color: var(--light); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+.lp-goal { font-size: 12px; color: var(--mid); margin-bottom: 12px; line-height: 1.55; }
+.lp-headlines { background: var(--blush); border-radius: 6px; padding: 10px 12px; columns: 2; column-gap: 20px; }
+.lp-headlines .copy-item { font-size: 11px; padding: 4px 0; line-height: 1.45; break-inside: avoid; }
+.lp-visual { font-size: 11px; color: var(--mid); font-style: italic; margin-top: 10px; padding-top: 10px; border-top: 0.5px solid var(--border); }
+
+/* STANDING */
+.standing { background: var(--navy); color: white; border-radius: 14px; padding: 28px; margin-top: 48px; }
+.standing h2 { font-family: 'Recoleta', Georgia, serif; font-size: 22px; margin-bottom: 14px; }
+.standing p { font-size: 13px; line-height: 1.7; opacity: 0.85; margin-bottom: 10px; }
+.standing strong { color: #FFD580; opacity: 1; }
+.standing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 16px; }
+.standing-item { background: rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 14px; }
+.standing-item-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; margin-bottom: 4px; }
+.standing-item-val { font-size: 13px; font-weight: 500; }
+
+/* FOOTER */
+.footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.footer-brand { font-family: 'Recoleta', Georgia, serif; font-size: 16px; color: var(--navy); }
+.footer-note { font-size: 11px; color: var(--light); }
+
+@media print { body { background: white; } .page { padding: 24px; } }
+
+/* SECTION 1 CONCEPT CARDS */
+.concept-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.concept-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+.concept-eyebrow { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--coral); margin-bottom: 3px; }
+.concept-name { font-family: "Recoleta", Georgia, serif; font-size: 16px; color: var(--navy); margin-bottom: 6px; }
+.concept-meta { font-size: 10px; color: var(--light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.concept-goal { font-size: 12px; color: var(--mid); margin-bottom: 12px; line-height: 1.55; padding-bottom: 10px; border-bottom: 0.5px solid var(--border); }
+.concept-card .copy-block { margin-bottom: 0; }
+.concept-card .lp-visual { margin-top: 10px; padding-top: 10px; border-top: 0.5px solid var(--border); }
+.concept-ref { float: right; width: 88px; margin: 0 0 8px 12px; }
+.concept-ref img { width: 100%; height: auto; border-radius: 6px; display: block; border: 1px solid var(--border); }
+.concept-ref-cap { font-size: 8px; color: var(--light); text-transform: uppercase; letter-spacing: 0.5px; text-align: center; margin-top: 3px; }
+
+</style>
+</head>
+<body>
+<div class="page">
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <div class="logo">FLUFF<span>Co</span></div>
+    <div style="font-size:13px;color:var(--mid);margin-top:4px;">Down Alternative Pillow -- Creative Brief</div>
+  </div>
+  <div class="header-right">
+    <div class="header-tag">Prepared for Blitzads</div>
+    <div class="pills">
+      <span class="pill pill-navy">Story 9:16</span>
+      <span class="pill pill-coral">500 Total Assets</span>
+      <span class="pill pill-outline">JUN W2 Delivery</span>
+    </div>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary" style="grid-template-columns: repeat(4, 1fr);">
+  <div class="sum-card"><div class="sum-num">500</div><div class="sum-label">Total Assets</div></div>
+  <div class="sum-card"><div class="sum-num">150</div><div class="sum-label">Sec 1 -- Proven Territory</div></div>
+  <div class="sum-card"><div class="sum-num">300</div><div class="sum-label">Sec 2 -- New Audiences</div></div>
+  <div class="sum-card"><div class="sum-num">50</div><div class="sum-label">Sec 3 -- Motion</div></div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="section">
+  <div class="section-eyebrow">Overview</div>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">500 Assets -- 3 Sections</div>
+      <span class="badge badge-navy">Story 9:16 only</span>
+    </div>
+    <div class="two-col" style="font-size:13px;">
+      <div>
+        <div style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:var(--light);margin-bottom:4px;">Product</div>
+        <div style="font-weight:500;color:var(--navy);">FluffCo Down Alternative Pillow</div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:var(--light);margin-bottom:4px;">Price Points</div>
+        <div style="color:var(--mid);">$69 (1) / $109.90 (2) / $165.90 (4) -- promo: up to 66% off</div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:var(--light);margin-bottom:4px;">Proof points available</div>
+        <div style="color:var(--mid);">PureWow 95/100 -- Oprah Daily Sleep O-Wards 2024 -- 794,000 sleepers -- 94% replaced every pillow -- 100-night trial -- hypoallergenic down alternative</div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:var(--light);margin-bottom:4px;">Batch goal</div>
+        <div style="color:var(--mid);">Broaden into 5 new audiences to gather fresh audience feedback, while keeping proven territory running</div>
+      </div>
+    </div>
+    <div class="info-box" style="margin-top:14px;"><strong>How JUN W2 is structured:</strong> Section 1 keeps our proven territory alive (Pain, Value, Life-stage) at 150 assets. Section 2 is the main bet: 300 assets across 5 brand-new audiences we have never targeted, 60 each, to learn who else responds. Section 3 is 50 motion assets for bottom-funnel, including a small offer test. <strong>Section 2 is the priority of this batch</strong> -- each new audience runs in its own ad set, so creative must be clearly audience-specific for the feedback to be readable.</div>
+  </div>
+</div>
+
+<!-- BRAND GUARDRAILS -->
+<div class="section">
+  <div class="section-eyebrow">Brand Guardrails</div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <div class="card-header"><div class="card-title">Typography</div></div>
+    <div class="font-demo">
+      <div class="font-card">
+        <div class="font-sample-rec">Recoleta</div>
+        <div class="font-use">Headlines and display text</div>
+      </div>
+      <div class="font-card">
+        <div class="font-sample-pan">PP Pangram Sans</div>
+        <div class="font-use">Body copy, buttons, UI text</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <div class="card-header"><div class="card-title">Color Palette -- reference get.fluff.co</div></div>
+    <div class="swatch-row">
+      <div class="swatch"><div class="dot" style="background:#FAF3EF;"></div><div><span class="swatch-name">Warm Cream</span><span class="swatch-hex">#FAF3EF</span></div></div>
+      <div class="swatch"><div class="dot" style="background:#F5EBE6;"></div><div><span class="swatch-name">Blush</span><span class="swatch-hex">#F5EBE6</span></div></div>
+      <div class="swatch"><div class="dot" style="background:#424680;"></div><div><span class="swatch-name">Navy</span><span class="swatch-hex">#424680</span></div></div>
+      <div class="swatch"><div class="dot" style="background:#E63946;"></div><div><span class="swatch-name">Coral Red</span><span class="swatch-hex">#E63946 -- CTA</span></div></div>
+      <div class="swatch"><div class="dot" style="background:#F59E0B;"></div><div><span class="swatch-name">Amber</span><span class="swatch-hex">#F59E0B -- ratings</span></div></div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="guardrail red">
+      <div class="guardrail-title">AI Generation -- Strictly Enforced</div>
+      <ul class="glist">
+        <li>Product 1:1 with real FluffCo pillows -- use reference images. Shape, piping, loft must match</li>
+        <li>No AI artifacts -- no warped fabric, impossible folds, extra pillows, distorted text, melting edges</li>
+        <li>If the pillow render does not look real, regenerate. Do not ship.</li>
+        <li>Photorealistic only -- not painterly, not fantasy, not over-rendered</li>
+      </ul>
+    </div>
+    <div class="guardrail">
+      <div class="guardrail-title">General Rules</div>
+      <ul class="glist">
+        <li>No em dashes in any copy</li>
+        <li>Numerals in headlines -- "8 Reasons" not "Eight"</li>
+        <li>CTA buttons: clean action text, no price in button</li>
+        <li>One dominant message per asset</li>
+        <li>Every asset should look at home on a premium brand's feed</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- META SAFETY -->
+  <div class="card" style="margin-top:14px;">
+    <div class="card-header">
+      <div class="card-title">Meta Ad Policy -- Safe But Strong</div>
+      <span class="badge badge-coral">Mandatory</span>
+    </div>
+    <div class="two-col">
+      <div class="guardrail red">
+        <div class="guardrail-title">Do NOT use</div>
+        <ul class="glist">
+          <li>Named hotel brands -- use "5-star hotels" generically</li>
+          <li>Named competitor pillow or bedding brands</li>
+          <li>Personal-attribute call-outs -- "your hot flashes," "your pregnancy insomnia," "you are in pain"</li>
+          <li>Medical claims -- "cures," "ends," "stops," "treats" any condition (critical for pregnancy and menopause audiences)</li>
+          <li>Pregnancy safety or health claims of any kind</li>
+          <li>Person before/after implying a health or body transformation</li>
+        </ul>
+      </div>
+      <div class="guardrail green">
+        <div class="guardrail-title">DO use</div>
+        <ul class="glist">
+          <li>Observational, universal framing -- "the nights that run warm," not "your hot flashes"</li>
+          <li>Product specs -- "down alternative," "hypoallergenic," "breathable," "holds its loft"</li>
+          <li>Documented proof -- PureWow 95/100, Oprah Daily Sleep O-Wards 2024, 794,000 sleepers, 94% stat, 100-night trial</li>
+          <li>Price and the real promo -- $69, up to 66% off (substantiated)</li>
+          <li>Product-only before/after (flat pillow vs lofted FluffCo)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta-warn"><strong>Extra caution this batch:</strong> the pregnancy and menopause audiences are health-adjacent. Keep all copy observational and product-anchored. Never claim the pillow helps a medical condition. If a headline could read as a health promise, rewrite it as an observation about comfort or temperature.</div>
+  </div>
+
+  <!-- OFFER NOTE -->
+  <div class="card" style="margin-top:14px;">
+    <div class="card-header"><div class="card-title">Promo -- Up To 66% Off</div><span class="badge badge-coral">Section 3 offer test only</span></div>
+    <p style="font-size:13px;color:var(--mid);">The "up to 66% off" promo is a real, substantiated discount and may be stated directly. It appears ONLY in the 10 offer-test assets in Section 3. Do not add the discount to Section 1, Section 2, or the 40 standard motion assets -- those hold the standard $69 and award-winning price story so we can read the offer test cleanly against them.</p>
+  </div>
+
+  <!-- NAMING CONVENTION -->
+  <div class="card" style="margin-top:14px;">
+    <div class="card-header">
+      <div class="card-title">File Naming Convention</div>
+      <span class="badge badge-navy">Required on every asset</span>
+    </div>
+    <p style="font-size:13px;color:var(--mid);margin-bottom:10px;">This batch adds an Audience token, because Section 2 runs each audience in its own ad set. The token is how each asset maps to the right ad set and how we read which audience responded. Be strict with it.</p>
+    <div style="font-family:monospace;font-size:13px;color:var(--navy);background:var(--blush);border-radius:8px;padding:14px;line-height:1.8;">
+      Blitzads - Fluff - [Section] - [Audience] - [Angle] [MonthBatch] - [number]
+    </div>
+    <div class="two-col" style="margin-top:12px;font-size:12px;">
+      <div style="background:var(--blush);border-radius:8px;padding:12px;">
+        <div style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:var(--light);margin-bottom:6px;">Tokens</div>
+        <div style="color:var(--mid);line-height:1.7;">Section: Proven / NewAud / Motion<br>Audience: Pain, Value, LifeStage, HotSleeper, Pregnancy, Athlete, Menopause, Host, BottomFunnel</div>
+      </div>
+      <div style="background:var(--blush);border-radius:8px;padding:12px;">
+        <div style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:var(--light);margin-bottom:6px;">Worked examples</div>
+        <div style="color:var(--mid);line-height:1.7;font-family:monospace;font-size:11px;">
+          Blitzads - Fluff - NewAud - HotSleeper - Cooling JUNW2 - 014<br>
+          Blitzads - Fluff - NewAud - Host - Bulk ROI JUNW2 - 031<br>
+          Blitzads - Fluff - Proven - Pain - Neck JUNW2 - 008<br>
+          Blitzads - Fluff - Motion - BottomFunnel - Offer JUNW2 - 045
+        </div>
+      </div>
+    </div>
+    <div class="info-box" style="margin-top:12px;"><strong>Why it matters this batch:</strong> the whole point of JUN W2 is to learn which new audiences respond. That only works if every asset carries its audience token and lands in the matching ad set. Reset the number to 001 at the start of each section.</div>
+  </div>
+</div>
+
+<!-- SAFE AREA -->
+<div class="section">
+  <div class="section-eyebrow">Safe Area -- Mandatory</div>
+  <div class="card">
+    <div class="card-header"><div class="card-title">Story 9:16 Safe Zone</div><span class="badge badge-coral">1080 x 1920px</span></div>
+    <div class="safe-wrap">
+      <div>
+        <div class="phone">
+          <div class="z-danger" style="top:0;height:25px;"><div class="z-label" style="top:7px;color:#E63946;">DANGER</div></div>
+          <div class="z-safe" style="top:25px;height:146px;"><div class="z-label" style="top:65px;color:#1A7A4A;">SAFE ZONE</div></div>
+          <div class="z-danger" style="bottom:0;height:25px;"><div class="z-label" style="top:7px;color:#E63946;">DANGER</div></div>
+        </div>
+        <div style="font-size:10px;color:var(--light);text-align:center;margin-top:6px;">Not to scale</div>
+      </div>
+      <div style="flex:1;">
+        <table class="spec-table">
+          <tr><td class="spec-key">Top safe boundary</td><td class="spec-val">y = 250px</td></tr>
+          <tr><td class="spec-key">Bottom safe boundary</td><td class="spec-val">y = 1600px</td></tr>
+          <tr><td class="spec-key">Left and right margins</td><td class="spec-val">64px each side</td></tr>
+          <tr><td class="spec-key">Top 250px</td><td class="spec-val">Leave empty -- IG UI</td></tr>
+          <tr><td class="spec-key">Bottom 320px</td><td class="spec-val">Leave empty -- caption + reply bar</td></tr>
+        </table>
+        <div class="info-box" style="margin-top:12px;">For motion assets, keep all text inside the safe zone for the full duration of the clip.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 1 DIVIDER -->
+<div class="section-divider">
+  <div class="section-divider-eyebrow">Section 1 -- 150 Assets</div>
+  <div class="section-divider-title">Proven Territory -- Pain / Value / Life-stage</div>
+  <div class="section-divider-sub">Keep what works running. Three proven angles, 50 assets each. Drives to get.fluff.co or relevant LPs. Naming: Section token Proven, Audience token Pain / Value / LifeStage.</div>
+</div>
+
+<div class="section">
+  <div class="section-eyebrow">Proven Angles -- Section 1</div>
+  <div class="info-box" style="margin-bottom:18px;"><strong>Job of this section:</strong> these are the angles that have carried past batches. Refresh the creative, keep the messaging discipline. No discount here (offer lives only in Section 3). Meta-safe, numerals, no em dashes.</div>
+
+  <div class="lp-grid">
+
+    <!-- PAIN -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">Angle 01 -- Pain</div>
+          <div class="lp-name">Pain / Discomfort (observational)</div>
+          <div class="lp-url">routes to relevant pain LPs (neck, back) or get.fluff.co</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">50 assets</span></div>
+      </div>
+      <div class="lp-goal">Surface the discomfort the pillow addresses, observationally. Never personal-attribute, never medical. The pillow is the fixable variable. Anchor to: loft, support, side-sleeper, holds its shape.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"Mornings hit different on the right pillow"</div>
+        <div class="copy-item">"Stiff mornings usually start with a flat pillow"</div>
+        <div class="copy-item">"The pillow is where comfort starts"</div>
+        <div class="copy-item">"7 reasons pillow loft matters more than people realize"</div>
+        <div class="copy-item">"If you fold your pillow to get comfortable, it is done"</div>
+        <div class="copy-item">"The simplest fix nobody talks about: the pillow"</div>
+        <div class="copy-item">"A pillow that holds its shape all night"</div>
+        <div class="copy-item">"Support that does not flatten by 2am"</div>
+        <div class="copy-item">"The difference the right loft makes"</div>
+        <div class="copy-item">"Built for side, back, and stomach sleepers"</div>
+        <div class="copy-item">"Why the pillow matters more than the mattress for comfort"</div>
+        <div class="copy-item">"Comfort that lasts the whole night"</div>
+        <div class="copy-item">"The pillow that keeps its support for years"</div>
+        <div class="copy-item">"What proper loft does for a restful night"</div>
+        <div class="copy-item">"7 things a great pillow does that a flat one cannot"</div>
+        <div class="copy-item">"The cheapest comfort upgrade in your bed"</div>
+        <div class="copy-item">"Soft and supportive at the same time"</div>
+        <div class="copy-item">"The pillow worth changing first"</div>
+      </div>
+      <div class="lp-visual">Visual: comfort-led product shots, side-sleeper support, lofted-vs-flat product comparison. Observational, no person in pain, no medical visuals.</div>
+    </div>
+
+    <!-- VALUE -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">Angle 02 -- Value</div>
+          <div class="lp-name">Value / Price-to-Quality</div>
+          <div class="lp-url">get.fluff.co</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">50 assets</span></div>
+      </div>
+      <div class="lp-goal">Make $69 feel like the smart choice against hotel-grade quality. Documented proof carries it. No discount here. Anchor to: $69, 95/100, award-winning, hotel-grade, 794,000 sleepers, lasts for years.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"Hotel-grade sleep, $69"</div>
+        <div class="copy-item">"95/100. Still $69."</div>
+        <div class="copy-item">"The pillow that wins awards and stays under $100"</div>
+        <div class="copy-item">"What hotel-grade actually costs here: $69"</div>
+        <div class="copy-item">"A $69 pillow that outlasts the $200 ones"</div>
+        <div class="copy-item">"Award-winning at a direct-to-you price"</div>
+        <div class="copy-item">"Why pay $200 for a lower score?"</div>
+        <div class="copy-item">"$69 once beats $25 every year"</div>
+        <div class="copy-item">"The 95/100 pillow at a fair price"</div>
+        <div class="copy-item">"Premium reviews, direct price"</div>
+        <div class="copy-item">"Hotel-grade fill without the hotel markup"</div>
+        <div class="copy-item">"The value 794,000 sleepers already found"</div>
+        <div class="copy-item">"Top-rated sleep, still $69"</div>
+        <div class="copy-item">"Built to last, priced to make sense"</div>
+        <div class="copy-item">"The math on a $69 pillow that lasts years"</div>
+        <div class="copy-item">"Proof a $69 pillow can be the good one"</div>
+        <div class="copy-item">"Quality you can document, at $69"</div>
+        <div class="copy-item">"The award did not change the price"</div>
+      </div>
+      <div class="lp-visual">Visual: dark studio price-hero or clean product with award badges (PureWow 95/100, Oprah Daily Sleep O-Wards 2024). Documented claims only. No discount.</div>
+    </div>
+
+    <!-- LIFE-STAGE -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">Angle 03 -- Life-stage</div>
+          <div class="lp-name">Life-stage / Identity</div>
+          <div class="lp-url">get.fluff.co</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">50 assets</span></div>
+      </div>
+      <div class="lp-goal">Identity and life-moment hooks (the proven W4 cuts: parents, travelers, 30s, empty nesters, renters, WFH). Cold scroll-stoppers, no price, the pillow incidental. Make the reader feel seen.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"The age where you stop settling for bad pillows"</div>
+        <div class="copy-item">"Things I no longer cheap out on: my pillow"</div>
+        <div class="copy-item">"The last pillow upgrade you will need for a while"</div>
+        <div class="copy-item">"Enough hotel rooms and you learn what a good pillow feels like"</div>
+        <div class="copy-item">"Small life upgrades that hit harder than you expect"</div>
+        <div class="copy-item">"The grown-up version of you buys the better pillow"</div>
+        <div class="copy-item">"Your bed should feel this good. Now it can."</div>
+        <div class="copy-item">"Started treating my bed like a destination"</div>
+        <div class="copy-item">"The simplest fix for waking up actually rested"</div>
+        <div class="copy-item">"Becoming someone who cares about their pillow"</div>
+        <div class="copy-item">"First grown-up purchase that is not from a big-box store"</div>
+        <div class="copy-item">"Working from home means the bed matters more"</div>
+        <div class="copy-item">"The bedroom upgrade you keep putting off"</div>
+        <div class="copy-item">"Nobody warned me how much a good pillow changes the morning"</div>
+        <div class="copy-item">"The upgrade your future self will thank you for"</div>
+        <div class="copy-item">"Treat your sleep the way you treat your coffee"</div>
+        <div class="copy-item">"The pillow that makes a place feel like home"</div>
+        <div class="copy-item">"Sleep like you finally have it figured out"</div>
+      </div>
+      <div class="lp-visual">Visual: warm editorial bedrooms, life-stage cues vary per asset. Aspirational, no price, product incidental in frame.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SECTION 2 DIVIDER -->
+<div class="section-divider">
+  <div class="section-divider-eyebrow">Section 2 -- 300 Assets -- Priority</div>
+  <div class="section-divider-title">New Audiences -- 5 x 60</div>
+  <div class="section-divider-sub">The main bet of this batch. Five audiences we have never targeted. Each runs in its own ad set, so creative must be unmistakably audience-specific. Naming: Section token NewAud, plus the audience token. All drive to get.fluff.co unless noted.</div>
+</div>
+
+<div class="section">
+  <div class="section-eyebrow">New Audience Briefs -- Section 2</div>
+  <div class="info-box" style="margin-bottom:18px;"><strong>Read this first:</strong> the goal is audience feedback. For that to work, a hot-sleeper asset must look and read like it was made for hot sleepers, not a generic pillow ad with a swapped headline. The audience cue (visual + copy) must be obvious in the first second. Pregnancy and menopause copy stays observational and product-anchored, never a health claim.</div>
+
+  <div class="lp-grid">
+
+    <!-- HOT SLEEPERS -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">Audience 01 -- Hot Sleepers -- token: HotSleeper</div>
+          <div class="lp-name">Hot Sleepers / Temperature</div>
+          <div class="lp-url">get.fluff.co</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">60 assets</span></div>
+      </div>
+      <div class="lp-goal">Talk to people who sleep warm and flip the pillow for the cool side. Lead with breathability and temperature comfort. Anchor to: breathable down alternative, stays comfortable, no need to flip. Do not claim medical cooling or temperature regulation as a health benefit.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"For people who flip the pillow to the cool side all night"</div>
+        <div class="copy-item">"The pillow that does not trap heat"</div>
+        <div class="copy-item">"Breathable down alternative, built for warm sleepers"</div>
+        <div class="copy-item">"No more chasing the cool side"</div>
+        <div class="copy-item">"Stays comfortable when the night runs warm"</div>
+        <div class="copy-item">"The cool-side feeling, both sides"</div>
+        <div class="copy-item">"Sleep warm? The fill matters more than you think."</div>
+        <div class="copy-item">"Breathable fill that does not hold heat"</div>
+        <div class="copy-item">"For the warm sleeper who never finds a comfortable pillow"</div>
+        <div class="copy-item">"The pillow that breathes with you"</div>
+        <div class="copy-item">"Why hot sleepers keep flipping. And how to stop."</div>
+        <div class="copy-item">"Cooler nights start with a more breathable pillow"</div>
+        <div class="copy-item">"Hotel-grade fill that does not run hot"</div>
+        <div class="copy-item">"The end of the midnight pillow flip"</div>
+        <div class="copy-item">"Built to stay comfortable, not stuffy"</div>
+        <div class="copy-item">"For warm sleepers who gave up on comfort"</div>
+        <div class="copy-item">"A pillow that keeps its cool"</div>
+        <div class="copy-item">"Breathable, supportive, and still $69"</div>
+      </div>
+      <div class="lp-visual">Visual cue must read "cool/breathable" instantly: cool tones, airy light, the cool-side-flip motif. Make the hot-sleeper context obvious in the first second.</div>
+    </div>
+
+    <!-- PREGNANCY -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">Audience 02 -- Pregnancy / New-Mom -- token: Pregnancy</div>
+          <div class="lp-name">Pregnancy / New-Mom Sleep (observational)</div>
+          <div class="lp-url">get.fluff.co</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">60 assets</span></div>
+      </div>
+      <div class="lp-goal">Talk to expecting and new parents around the comfort of rest in a demanding season. Gentle, supportive, observational. NEVER a pregnancy health or safety claim. The pillow is about comfort and the short sleep windows being good ones. Anchor to: soft support, the little sleep you get being good sleep, hypoallergenic, washable.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"When sleep comes in short windows, make them good ones"</div>
+        <div class="copy-item">"Comfort for the season when rest is precious"</div>
+        <div class="copy-item">"Soft support for the nights that matter most"</div>
+        <div class="copy-item">"The little sleep you get should be good sleep"</div>
+        <div class="copy-item">"A gentle upgrade for a demanding season"</div>
+        <div class="copy-item">"Hypoallergenic comfort, easy to keep clean"</div>
+        <div class="copy-item">"For the nights that are anything but predictable"</div>
+        <div class="copy-item">"Rest that is worth protecting right now"</div>
+        <div class="copy-item">"Soft, supportive, and washable for real life"</div>
+        <div class="copy-item">"The comfort upgrade new parents notice"</div>
+        <div class="copy-item">"Make the quiet hours count"</div>
+        <div class="copy-item">"A pillow that supports you through the season"</div>
+        <div class="copy-item">"Comfort that does not ask much of you"</div>
+        <div class="copy-item">"Because every hour of rest matters more now"</div>
+        <div class="copy-item">"Soft support for changing sleep"</div>
+        <div class="copy-item">"The pillow that makes a short nap feel like more"</div>
+        <div class="copy-item">"Gentle comfort, hotel-grade quality"</div>
+        <div class="copy-item">"Rest a little easier this season"</div>
+      </div>
+      <div class="lp-visual">Visual: soft, warm, calm. Nursery-adjacent or quiet-bedroom cues, gentle palette. Observational and comforting. No belly-specific medical imagery, no health claims, no before/after.</div>
+    </div>
+
+    <!-- ATHLETES -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">Audience 03 -- Athletes / Recovery -- token: Athlete</div>
+          <div class="lp-name">Athletes / Recovery</div>
+          <div class="lp-url">get.fluff.co</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">60 assets</span></div>
+      </div>
+      <div class="lp-goal">Talk to people who treat sleep as recovery. Performance and recovery framing, observational not medical. The pillow as part of a recovery routine. Anchor to: recovery, sleep quality, support, the hours you put into training deserve good rest.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"Recovery happens while you sleep. On something."</div>
+        <div class="copy-item">"You dial in training and nutrition. What about the pillow?"</div>
+        <div class="copy-item">"The recovery tool you have been ignoring"</div>
+        <div class="copy-item">"Sleep is recovery. The pillow is part of it."</div>
+        <div class="copy-item">"The hours you train deserve real rest"</div>
+        <div class="copy-item">"Better support for the nights that rebuild you"</div>
+        <div class="copy-item">"Recovery starts at the pillow, not the supplement"</div>
+        <div class="copy-item">"The cheapest piece of your recovery stack"</div>
+        <div class="copy-item">"Your training is dialed. Your sleep setup is not."</div>
+        <div class="copy-item">"Built to support the way athletes sleep"</div>
+        <div class="copy-item">"Quality rest for people who earn it"</div>
+        <div class="copy-item">"The recovery upgrade that costs $69"</div>
+        <div class="copy-item">"Sleep quality is a training variable"</div>
+        <div class="copy-item">"Rest like recovery actually matters"</div>
+        <div class="copy-item">"Support that holds through a full night of recovery"</div>
+        <div class="copy-item">"The pillow that takes recovery seriously"</div>
+        <div class="copy-item">"You optimize everything else. Start with the pillow."</div>
+        <div class="copy-item">"Recovery is built on good sleep. Good sleep starts here."</div>
+      </div>
+      <div class="lp-visual">Visual: clean, performance-coded, slightly masculine-neutral. Recovery-routine cues (gym bag, tracker, early morning). Treat the pillow as recovery gear. Observational, no medical recovery claims.</div>
+    </div>
+
+    <!-- MENOPAUSE -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">Audience 04 -- Menopause / Hot Flash -- token: Menopause</div>
+          <div class="lp-name">Menopause / Warm Nights (observational)</div>
+          <div class="lp-url">get.fluff.co</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">60 assets</span></div>
+      </div>
+      <div class="lp-goal">Talk to people navigating warm, restless nights, with dignity and warmth. Observational, never medical. Overlaps the cooling story but with an older, knowing tone. NEVER claim to treat hot flashes or menopause. Anchor to: breathable fill, cooler comfort, nights that run warm, the relief of a pillow that does not hold heat.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"For the nights that run warm"</div>
+        <div class="copy-item">"A more breathable pillow for warmer nights"</div>
+        <div class="copy-item">"The pillow that does not hold the heat in"</div>
+        <div class="copy-item">"When the night gets warm, the fill matters"</div>
+        <div class="copy-item">"Breathable comfort for restless, warm nights"</div>
+        <div class="copy-item">"The cool-side feeling, all night"</div>
+        <div class="copy-item">"For nights that are warmer than they used to be"</div>
+        <div class="copy-item">"A pillow built to breathe, not trap heat"</div>
+        <div class="copy-item">"Comfort that keeps up with a warm night"</div>
+        <div class="copy-item">"The breathable upgrade for changing nights"</div>
+        <div class="copy-item">"Cooler, calmer nights start with the pillow"</div>
+        <div class="copy-item">"For the sleeper who runs warm now"</div>
+        <div class="copy-item">"The relief of a pillow that stays comfortable"</div>
+        <div class="copy-item">"Breathable down alternative, made for warm sleepers"</div>
+        <div class="copy-item">"When you just want the night to feel cooler"</div>
+        <div class="copy-item">"A pillow that understands a warm night"</div>
+        <div class="copy-item">"Hotel-grade comfort that breathes"</div>
+        <div class="copy-item">"Rest easier on the warm nights"</div>
+      </div>
+      <div class="lp-visual">Visual: calm, warm-but-airy, mature and elegant tone (not clinical, not youth-skewed). Cool/breathable cues. Observational only, never a medical or symptom claim.</div>
+    </div>
+
+    <!-- HOSTS -- bulk/ROI treatment -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">Audience 05 -- Airbnb / STR Hosts -- token: Host -- BULK / ROI</div>
+          <div class="lp-name">Hospitality / Short-Term Rental Hosts</div>
+          <div class="lp-url">get.fluff.co (consider a bulk/host landing page)</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">60 assets</span></div>
+      </div>
+      <div class="lp-goal">Different buyer, different logic. Hosts buy for guests, in volume, and care about guest reviews, cost-per-room, and durability across many uses. Frame around ROI, guest experience, and outfitting every room, not personal comfort. Anchor to: guest reviews, durable through heavy use, hotel-grade feel guests notice, bulk value, 100-night trial.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"The pillow your guests will mention in the review"</div>
+        <div class="copy-item">"Hotel-grade comfort, guests notice the difference"</div>
+        <div class="copy-item">"Outfit every room with the pillow guests love"</div>
+        <div class="copy-item">"5-star sleep is a 5-star review waiting to happen"</div>
+        <div class="copy-item">"Durable enough for back-to-back guests"</div>
+        <div class="copy-item">"The upgrade that shows up in your ratings"</div>
+        <div class="copy-item">"Guests remember how they slept"</div>
+        <div class="copy-item">"Hotel-grade pillows without the hotel-grade cost per room"</div>
+        <div class="copy-item">"Built to hold up through every turnover"</div>
+        <div class="copy-item">"The detail that turns a good stay into a great review"</div>
+        <div class="copy-item">"Equip your rental the way the best hotels do"</div>
+        <div class="copy-item">"Comfort guests notice, durability you count on"</div>
+        <div class="copy-item">"The pillow that pays for itself in reviews"</div>
+        <div class="copy-item">"Make every room feel like a 5-star room"</div>
+        <div class="copy-item">"Guest-ready comfort, room after room"</div>
+        <div class="copy-item">"The small upgrade with the biggest review impact"</div>
+        <div class="copy-item">"Hotel-grade fill, host-friendly value"</div>
+        <div class="copy-item">"Outfit the whole place once, sleep easy on reviews"</div>
+      </div>
+      <div class="lp-visual">Visual: hospitality-coded, multiple beds / turnover / styled guest rooms, review-star motifs. ROI and guest-experience framing. This audience reads differently from the consumer four: lean into volume, durability, and reviews, not personal comfort.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SECTION 3 DIVIDER -->
+<div class="section-divider">
+  <div class="section-divider-eyebrow">Section 3 -- 50 Assets</div>
+  <div class="section-divider-title">Motion -- Bottom-Funnel</div>
+  <div class="section-divider-sub">Fresh motion assets, 5 to 10 seconds, no voiceover, for Solution-Aware and Product-Aware audiences. 40 on the standard price story, 10 on the up-to-66%-off offer test. Naming: Section token Motion, Audience token BottomFunnel.</div>
+</div>
+
+<div class="section">
+  <div class="section-eyebrow">Motion -- Section 3</div>
+  <div class="info-box" style="margin-bottom:18px;"><strong>Why motion, why bottom-funnel:</strong> motion is the format we have never properly tested. Running it on warm, lower-funnel audiences gives the fastest, cleanest read on whether motion lifts conversion. Keep the offer isolated to 10 assets so we can read motion and offer separately.</div>
+
+  <div class="lp-grid">
+
+    <!-- STANDARD MOTION -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">Motion A -- standard price story</div>
+          <div class="lp-name">Motion -- Solution &amp; Product Aware</div>
+          <div class="lp-url">get.fluff.co</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-navy">40 assets</span></div>
+      </div>
+      <div class="lp-goal">5 to 10 sec, no VO. Warm-audience conversion motion on the standard $69 / award price story. Concentrate into 2 to 3 ideas (springback, side-by-side, product reveal) so each gets a fair test. No discount in these 40.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"Watch it spring right back"</div>
+        <div class="copy-item">"This is what holds-its-shape looks like"</div>
+        <div class="copy-item">"95/100. Still $69. See why."</div>
+        <div class="copy-item">"The pillow hotels use, in motion"</div>
+        <div class="copy-item">"Flat pillow vs FluffCo, side by side"</div>
+        <div class="copy-item">"Press it. Release it. Watch."</div>
+        <div class="copy-item">"Hotel-grade loft, shown not told"</div>
+        <div class="copy-item">"The springback says everything"</div>
+        <div class="copy-item">"Award-winning at $69, see the difference"</div>
+        <div class="copy-item">"What a pillow that lasts looks like"</div>
+        <div class="copy-item">"The fold test, in real time"</div>
+        <div class="copy-item">"Loft that comes right back"</div>
+        <div class="copy-item">"See the difference before you feel it"</div>
+        <div class="copy-item">"The pillow that does not stay flat"</div>
+        <div class="copy-item">"Hotel-grade, $69, watch why"</div>
+        <div class="copy-item">"This is the difference, in motion"</div>
+      </div>
+      <div class="lp-visual">Direction: shoot 2-3 ideas only -- springback (press and release, full recovery), side-by-side product comparison, slow product reveal with light motion. Text inside safe zone full duration. No VO, numerals, no named hotels, no discount.</div>
+    </div>
+
+    <!-- OFFER MOTION -->
+    <div class="lp-card">
+      <div class="lp-card-header">
+        <div>
+          <div class="lp-eyebrow">Motion B -- offer test</div>
+          <div class="lp-name">Motion -- Up To 66% Off</div>
+          <div class="lp-url">get.fluff.co</div>
+        </div>
+        <div class="lp-count"><span class="badge badge-coral">10 assets</span></div>
+      </div>
+      <div class="lp-goal">Isolated offer test. 5 to 10 sec motion leading with the real, substantiated up-to-66%-off promo. These 10 are the ONLY assets in the batch with the discount. Keep everything else identical to Motion A so the offer is the only variable.</div>
+      <div class="lp-headlines">
+        <div class="copy-item">"Up To 66% Off The Pillow Hotels Use"</div>
+        <div class="copy-item">"Hotel-Grade Sleep, Now Up To 66% Off"</div>
+        <div class="copy-item">"95/100 Pillow, Up To 66% Off"</div>
+        <div class="copy-item">"The Award Winner, Up To 66% Off"</div>
+        <div class="copy-item">"Up To 66% Off. While It Lasts."</div>
+        <div class="copy-item">"Your Best Sleep, Up To 66% Off"</div>
+        <div class="copy-item">"Hotel-Grade Fill, Up To 66% Off Today"</div>
+        <div class="copy-item">"The Pillow 794,000 Love, Up To 66% Off"</div>
+        <div class="copy-item">"Up To 66% Off The Pillow That Lasts"</div>
+        <div class="copy-item">"Best Pillow, Best Price: Up To 66% Off"</div>
+      </div>
+      <div class="lp-visual">Direction: same motion treatment as Motion A, with the offer as the hero. Discount must be the real, substantiated promo. CTA: "Shop The Sale". Keep production identical to Motion A so the offer is the only changed variable.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- STANDING INSTRUCTION -->
+<div class="standing">
+  <h2>Standing Instruction for Blitzads</h2>
+  <p><strong>The goal of this batch is audience feedback.</strong> Section 2 is the priority. Each new audience runs in its own ad set, so every asset must be unmistakably made for its audience in the first second, not a generic pillow ad with a swapped line.</p>
+  <p><strong>Naming is mandatory and now includes the audience token:</strong> Blitzads - Fluff - [Section] - [Audience] - [Angle] [MonthBatch] - [number]. This is how each asset maps to the right ad set and how we read which audience responded. An asset named wrong cannot be measured.</p>
+  <p><strong>Health-adjacent audiences (Pregnancy, Menopause) stay observational.</strong> Never claim the pillow helps a medical condition, eases pregnancy, or treats hot flashes. Frame around comfort and temperature only. If a line could read as a health promise, rewrite it as an observation.</p>
+  <p><strong>The discount lives in 10 assets only.</strong> Up to 66% off appears solely in Motion B. Everything else holds the standard $69 and award price story so the offer test reads cleanly.</p>
+  <p><strong>Airbnb hosts are a different buyer.</strong> Frame around guest reviews, durability through turnover, and outfitting every room. Not personal comfort.</p>
+  <p>Meta safety holds throughout: no named hotels, no personal-attribute call-outs, no medical claims, no person before/after. Documented proof only. Numerals in headlines, no em dashes.</p>
+  <div class="standing-grid">
+    <div class="standing-item"><div class="standing-item-label">Quality check</div><div class="standing-item-val">Blitzads QC before submission, client approves on delivery</div></div>
+    <div class="standing-item"><div class="standing-item-label">Delivery cadence</div><div class="standing-item-val">JUN W2 - One time</div></div>
+    <div class="standing-item"><div class="standing-item-label">Attach with this brief</div><div class="standing-item-val">Product reference images + Safe Area Guide + per-audience ad-set map</div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">BlitzAds x Skyvane</div>
+  <div class="footer-note">Creative Brief -- Jun W2 2026 -- Prepared by Skyvane</div>
+</div>
+
+</div>
+</body>
+</html>
